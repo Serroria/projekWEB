@@ -1,3 +1,14 @@
+<?php
+require_once 'Product.php';
+require_once 'Category.php';
+
+$productObj = new Product();
+$categoryObj = new Category();
+
+$products = $productObj->getAll();
+$categories = $categoryObj->getAll();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,36 +87,39 @@
 
     <!-- content mainnya -->
 
-    <form class="form-produk" action="{{ route($editProduct ? 'products.update' : 'products.store', $editProduct ? $editProduct->id : '') }}" method="POST" enctype="multipart/form-data">
-    @csrf
-     @if ($editProduct)
-        @method('PUT')
-    @endif
+    <form class="form-produk" action="products.php" method="POST" enctype="multipart/form-data">
+    <?php if(isset($editProduct)): ?>
+        <input type="hidden" name="id" value="<?= $editProduct[id] ?>">
+    <?php endif; ?>
+
     <div>
         <label class="form-label">Nama Produk:</label><br>
-        <input type="text" name="nama" value="{{ old('nama', $editProduct->nama ?? '') }}" required>
+        <input type="text" name="nama" value=" <?= htmlspecialchars($editProduct['nama']?? $_POST['nama']?? '')?> required>
     </div>
 
     <div>
         <label class="form-label">Gambar Produk:</label><br>
-       <input type="file" name="gambar" {{ $editProduct ? '' : 'required' }}>
+       <input type="file" name="gambar" <?= isset ($editProduct) ? '' : 'required' ?>>
 
     </div>
 
     <div>
         <label class="form-label">Deskripsi Produk:</label><br>
-        <textarea name="deskripsi">{{ old('deskripsi', $editProduct->deskripsi ?? '') }}</textarea>
+       <textarea name="deskripsi"><?= htmlspecialchars($editProduct['deskripsi'] ?? $_POST['deskripsi'] ?? '') ?></textarea>
+
+
     </div>
 
     <div>
         <label class="form-label">Kategori Produk:</label><br>
         <select name="category_id" class="form-control" required>
             <option value="">-- Pilih Kategori --</option>
-            @foreach ($categories as $category)
-                <option value="{{ $category->id }}" {{ old('category_id', $editProduct->category_id ??'') == $category->id ? 'selected' : '' }}>
-                    {{ $category->nama }}
+            <?php foreach ($categories as $category): ?>
+                <option value="<?= $category['id'] ?>" 
+               <?= (isset($editProduct) && $editProduct['category_id'] == $category['id']) ? 'selected' : '' ?>>
+                    <?= htmlspecialchars($category['nama']) ?>
                 </option>
-            @endforeach
+            <?php endforeach; ?>
         </select>
     </div>
 
@@ -137,24 +151,25 @@
         <th>Aksi</th>
     </tr>
     <tbody>
-        @forelse($products as $product)
+        <? if (!empty($products)): ?>
+            <?php foreach ($product as $i => $product) : ?>
 
         <tr>
-            <td data-th="No">{{ $loop->iteration }}</td>
+            <td data-th="No"><?= $i +1?></td>
             <td data-th="Gambar">
-                <img src="{{ asset('storage/' . $product->gambar) }}" alt="{{ $product->nama }}" width="60">
+                <img src="uploads/<?= $product['gambar'] ?>" alt="<?= htmlspecialchars($product['nama']) ?> width="60">
             </td>
-            <td data-th="Nama">{{ $product->nama}}</td>
+            <td data-th="Nama"><?= htmlspecialchars($product['nama']) ?></td>
             {{-- <td data-th="Stok">{{ $product->stok }}</td> --}}
 
-            <td data-th="Desc">{{ Str::limit($product->deskripsi, 50)}}</td>
-            <td data-th="Kategori">{{$product->category->nama??'-' }}</td>
-            <td data-th="Harga">Rp{{ number_format($product->harga, 0, ',', '.') }}</td>
+            <td data-th="Desc"><?= htmlspecialchars(substr($product['deskripsi'], 0, 50)) ?></td>
+            <td data-th="Kategori"><?= htmlspecialchars($product['category_nama'] ?? '-') ?></td>
+            <td data-th="Harga">Rp<?= number_format($product['harga'], 0, ',', '.') ?></td>
 
             <td data-th="Aksi" >
                 <!-- From Uiverse.io by aaronross1 --> 
               <!-- From Uiverse.io by mrhyddenn --> 
-              <a href="{{ route('admin', $product->id) }}">  
+              <a href="edit.php?id=<?= $product['id'] ?>">>  
               <button>
                 Edit
                     <path fill="none" d="M0 0h24v24H0z"></path>
@@ -167,29 +182,29 @@
             </a>
 
                 {{-- <a href="{{ route('admin', $product->id) }}" class="btn btn-sm btn-warning">Edit</a> --}}
-                <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display: inline;" onsubmit="return confirm('Yakin ingin menghapus?');">
-                @csrf
-                @method('DELETE')
+                <form action="delete.php" method="POST" style="display: inline;" onsubmit="return confirm('Yakin ingin menghapus?');">
+                <input type="hidden" name="id" value="<?= $product['id'] ?>">
                 <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
             </form>
             </td>
 
 
         </tr>
-        @empty
+       <?php endforeach; ?>
+        <?php else: ?>
         <tr>
             <td colspan="6" class="text-center text-muted">Belum ada produk.</td>
         </tr>
-        @endforelse
+         <?php endif; ?>
     </tbody>
 </table>
 
 </div>
 
-<!-- Tambahkan pagination di sini -->
+<!-- Tambahkan pagination di sini
 <div style="margin-top: 20px;">
     {{ $products->links() }}
-</div>
+</div> -->
 
 <script src='../../assets/js/admin.js'></script>
 </body>

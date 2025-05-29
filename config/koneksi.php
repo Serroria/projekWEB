@@ -2,7 +2,7 @@
 function koneksi()
 {
     $host = 'localhost';
-    $db = 'db_jamukita';
+    $db = 'db_jamuKita';
     $user = 'root';
     $pass = '';
 
