@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tes</title>
-</head>
-<body>
-    <h1>TESSSSS</h1>
-</body>
-</html>
+<?php
+include '../config/koneksi.php';
+$conn = koneksi();
+if ($conn instanceof mysqli) {
+    echo "Connected Successfully using MySQLi";
+} else {
+    echo "Unexpected connection type.";
+}
+CloseCon($conn);
+?>
