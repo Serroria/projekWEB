@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let content = "";
             if (text === "Tentang Kami") {
-                content = "<h2>Tentang Kami</h2><p>Ini adalah informasi tentang kami.</p>";
+                content = "<h2>Tentang Kami</h2><p>Kami adalah UMKM yang bergerak di bidang jual beli obat herbal tradional Indonesia..</p>";
             } else if (text === "Cara Order") {
                 content = "<h2>Cara Order</h2><p>Petunjuk cara memesan produk kami.</p>";
             } else if (text === "Kontak Kami") {

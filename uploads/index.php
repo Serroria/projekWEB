@@ -1,10 +1,13 @@
 <?php
-include '../config/koneksi.php';
-$conn = koneksi();
-if ($conn instanceof mysqli) {
-    echo "Connected Successfully using MySQLi";
+require_once '../config/koneksi.php';
+
+
+$db = new koneksi();
+$conn = $db->getConnection();
+
+// Cek apakah koneksi berhasil
+if ($conn) {
+    echo "Koneksi database berhasil!";
 } else {
-    echo "Unexpected connection type.";
+    echo "Koneksi database gagal!";
 }
-CloseCon($conn);
-?>

@@ -1,4 +1,25 @@
 
+<?php
+include '../../config/koneksi.php';
+$db = new koneksi();
+$conn = $db->getConnection();
+
+$sql = "SELECT p.id, p.nama, p.gambar, p.deskripsi, p.harga, c.nama AS kategori
+        FROM products p
+        JOIN categories c ON p.category_id = c.id";
+$result = $conn->query($sql);
+
+$products = [];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $products[] = $row;
+    }
+}
+
+$conn->close();
+?>
+
+
 <div class="bg-[#f9f6ee]">
     <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <h2 class="sr-only">Products</h2>
@@ -6,27 +27,27 @@
         <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             <?php foreach ($products as $product) { ?>
             
-            <div class="max-w-sm mx-auto product-card" data-category="<?php echo $product->category->nama; ?>">
+            <div class="max-w-sm mx-auto product-card" data-category="<?php echo htmlspecialchars($product['kategori']); ?>">
                 <div class="group block">
-                    <img src="" 
-                         alt="" 
+                    <img src="uploads/<?php echo $product['gambar']; ?>" 
+                         alt="<?php echo htmlspecialchars($product['nama']); ?>" 
                          class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8">
                     
                     <div class="flex items-center justify-between mt-4 cursor-pointer" onclick="toggleDesc(<?php echo $product->id; ?>)">
                         <h3 class="text-sm text-gray-700 font-semibold flex items-center">
-                            Tes
-                            <span id="arrowIcon-<?php echo $product->id; ?>" class="ml-2 transition-transform">▼</span>
+                             <?php echo htmlspecialchars($product['nama']); ?>
+                            <span id="arrowIcon-<?php echo $product['id']; ?>" class="ml-2 transition-transform">▼</span>
                         </h3>
                     </div>
 
                     <!-- Deskripsi -->
-                    <div id="descBox-<?php echo $product->id; ?>" class="hidden mt-2 text-sm text-gray-600">
-                        tes
+                    <div id="descBox-<?php echo $product['id']; ?>" class="hidden mt-2 text-sm text-gray-600">
+                        <?php echo nl2br(htmlspecialchars($product['deskripsi'])); ?>
                     </div>
-                    <h3><strong>Kategori:</strong> <?php echo $product->category->nama; ?></h3>
+                    <h3><strong>Kategori:</strong> <?php echo $product['kategori']; ?></h3>
                     <!-- <p><strong>Stok:</strong> <?php echo $product->stok; ?></p> -->
 
-                    <p><strong>Harga:</strong> Rp. <?php echo number_format($product->harga, 2, ',', '.'); ?></p>
+                    <p><strong>Harga:</strong> Rp.  <?php echo number_format($product['harga'], 2, ',', '.'); ?></p>
                     <!-- {{-- <button class="mt-2 bg-orange-950 hover:bg-red-700 text-white font-bold py-2 px-4 border rounded" 
                       onclick="location.href='https://shopee.co.id/davidnicolas4?categoryId=100001&entryPoint=ShopByPDP&itemId=43550536931';">
                       BELI
@@ -35,7 +56,9 @@
 
                     <button 
                       class="buy-btn"
-                      
+                        data-product-id="<?php echo $product['id']; ?>"
+                        data-product-name="<?php echo htmlspecialchars($product['nama']); ?>"
+                        data-price="<?php echo $product['harga']; ?>"
                     >
                       <i class="fa-solid fa-cart-shopping"></i>
                     </button>

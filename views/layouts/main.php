@@ -6,6 +6,11 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>tes</h1>
+
+<div class="navbar">
+    <?php include('../views/partial/navbar.php') ?>
+</div>
   <?php include('footer.php'); ?>
 
 </body>

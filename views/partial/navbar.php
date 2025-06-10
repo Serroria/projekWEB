@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Navbar</title>
     <link rel='stylesheet' href='../../assets/css/navbarHome.css'>
     <link rel='stylesheet' href='../../assets/css/posterSlide.css'>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -74,9 +74,7 @@
         </div>
     </div>
 
-    <?php 
-    include('homepage.php')
-    ?>
+    
 
  <!-- Modal Pop-up -->
   <div class="modal" >
@@ -89,7 +87,8 @@
 
 <script src='../../assets/js/navbarHome.js'></script>
 <script src='../../assets/js/posterSlide.js'></script>
-<script>document.addEventListener("DOMContentLoaded", function () {
+<script src='../../assets/js/navbarCOntent.js'></script>
+<!-- <script>document.addEventListener("DOMContentLoaded", function () {
     const menuItems = document.querySelectorAll(".menu-item");
     const modal = document.querySelector(".modal");
     const modalContent = document.querySelector(".modal-content");
@@ -125,6 +124,6 @@
         }
     });
 });
-</script>
+</script> -->
 </body>
 </html>
