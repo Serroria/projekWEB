@@ -26,7 +26,36 @@ $conn->close();
     <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <h2 class="sr-only">Products</h2>
 
-        <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+        <div class="max-w-sm mx-auto product-card" data-category="Jamu Kesehatan">
+        <div class="group block">
+           <img src="../../assets/images/buyungupik.jpg" 
+               alt="Buyung Upik" 
+               class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8">
+          
+          <div class="flex items-center justify-between mt-4 cursor-pointer" onclick="toggleDesc(1)">
+            <h3 class="text-sm text-gray-700 font-semibold flex items-center">
+              Buyung Upik
+              <span id="arrowIcon-1" class="ml-2 transition-transform">▼</span>
+            </h3>
+          </div>
+
+          <!-- Deskripsi -->
+          <div id="descBox-1" class="hidden mt-2 text-sm text-gray-600">
+            Jamu tradisional berbahan dasar kunyit dan asam jawa untuk menyegarkan tubuh dan membantu melancarkan haid.
+          </div>
+
+          <h3><strong>Kategori:</strong> Jamu Kesehatan</h3>
+          <p><strong>Harga:</strong> Rp. 15.000,00</p>
+
+          <button onclick="toggleCheckout()" class="buy-btn">Checkout</button>
+
+          <button class="buy-btn" data-product-id="1" data-product-name="Jamu Kunyit Asam" data-price="15000">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+        </div>
+      </div>
+
+        <!-- <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             <?php foreach ($products as $product) { ?>
             
             <div class="max-w-sm mx-auto product-card" data-category="<?php echo htmlspecialchars($product['kategori']); ?>">
@@ -40,10 +69,10 @@ $conn->close();
                              <?php echo htmlspecialchars($product['nama']); ?>
                             <span id="arrowIcon-<?php echo $product['id']; ?>" class="ml-2 transition-transform">▼</span>
                         </h3>
-                    </div>
+                    </div> -->
 
                     <!-- Deskripsi -->
-                    <div id="descBox-<?php echo $product['id']; ?>" class="hidden mt-2 text-sm text-gray-600">
+                    <!-- <div id="descBox-<?php echo $product['id']; ?>" class="hidden mt-2 text-sm text-gray-600">
                         <?php echo nl2br(htmlspecialchars($product['deskripsi'])); ?>
                     </div>
                     <h3><strong>Kategori:</strong> <?php echo $product['kategori']; ?></h3>
@@ -66,10 +95,10 @@ $conn->close();
             <?php } ?>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- POP-UP MODAL -->
-<div id="checkoutModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center hidden z-50">
+<!-- <div id="checkoutModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center hidden z-50">
     <div class="bg-white p-6 rounded-lg shadow-lg w-96">
         <h2 class="text-xl font-semibold mb-4">Checkout</h2>
         <div id="cartItems" class="mb-4"></div>
@@ -79,7 +108,7 @@ $conn->close();
         <p class="font-bold text-lg">Total: <span id="totalHarga"></span></p>
         <button class="mt-4 bg-blue-600 hover:bg-blue-800 text-white py-2 px-4 rounded" onclick="toggleCheckout()">Tutup</button>
     </div>
-</div>
+</div> -->
 
 <script>
     function toggleDesc(id) {
