@@ -1,54 +1,32 @@
-var slide = document.querySelectorAll('.slide');
-        var btns= document.querySelectorAll('.btn');
-        let currentSlide = 1;
+let slides = document.querySelectorAll('.slide');
+let btns = document.querySelectorAll('.btn');
+let currentSlide = 0;
 
-        //manua slide
+// Fungsi untuk menampilkan slide berdasarkan index
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove('slider-active');
+    btns[i].classList.remove('slider-active');
+  });
 
-        var manualNav = function(manual){
-            slide.forEach((slide)=>{
-                slide.classList.remove('slider-active');
+  slides[index].classList.add('slider-active');
+  btns[index].classList.add('slider-active');
+  currentSlide = index;
+}
 
-                btns.forEach((btn)=>{
-                    btn.classList.remove('slider-active');
-                });
-            });
+// Navigasi manual via tombol bulat
+btns.forEach((btn, i) => {
+  btn.addEventListener('click', () => {
+    showSlide(i);
+  });
+});
 
-            slide[manual].classList.add('slider-active');
-            btns[manual].classList.add('slider-active');
-        }
+// Auto play
+function autoPlay() {
+  setInterval(() => {
+    let nextSlide = (currentSlide + 1) % slides.length;
+    showSlide(nextSlide);
+  }, 3000); // 3 detik
+}
 
-        btns.forEach((btn, i)=> {
-            btn.addEventListener("click", ()=>{
-                manualNav(i);
-                currentSlide = i;
-            });
-        });
-
-           // slider autoplay
-        var repeat = function(activeClass){
-            let active = document.getElementsByClassName('slider-active');
-            let i = 1;
-
-            var repeater = () => {
-                setTimeout(function(){
-                    [...active].forEach((activeSlide)=>{
-                       activeSlide.classList.remove('slider-active');
-                    })
-
-                slide[i].classList.add('slider-active');
-                btns[i].classList.add('slider-active');
-                i++;
-
-                if(slide.length == i){
-                    i = 0;
-                }
-               if(i >= slide.length){
-                     return;
-                }
-
-                repeater();
-                }, 3000);
-            }
-            repeater();
-        }
-        repeat();
+autoPlay();
