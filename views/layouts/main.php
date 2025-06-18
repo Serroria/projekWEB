@@ -30,7 +30,7 @@
 </div>
 
 <script src="../../assets/js/category.js"></script>
-<script src="../../assets/js/posterSlide.js"></script>
+<script src="../../assets/js/posterSlider.js"></script>
     
 </body>
 </html>

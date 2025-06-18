@@ -44,7 +44,7 @@ $conn->close();
             Jamu tradisional berbahan dasar kunyit dan asam jawa untuk menyegarkan tubuh dan membantu melancarkan haid.
           </div>
 
-          <h3><strong>Kategori:</strong> Jamu Kesehatan</h3>
+          <h3><strong>Kategori:</strong> Jamu Anak</h3>
           <p><strong>Harga:</strong> Rp. 15.000,00</p>
 
           <button onclick="toggleCheckout()" class="buy-btn">Checkout</button>

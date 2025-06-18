@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -268,7 +268,6 @@
     margin: 18px;
 }
 
-/* Untuk konten utama */
 .content {
     position: relative;
     background: #e4e9f7;
@@ -283,7 +282,7 @@
     width: calc(100% - 250px);
 }
 
-/* Untuk section konten */
+
 .content-section {
     display: none;
     padding: 20px;
@@ -291,4 +290,4 @@
 
 .content-section.active {
     display: block;
-}
+} */
