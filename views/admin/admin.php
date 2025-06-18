@@ -7,8 +7,16 @@ if (isset($_GET['edit_id'])) {
     $dataEdit = $product->getById($_GET['edit_id']);
 }
 ?>
-    
-    <h2><?php echo $dataEdit ? 'Edit Produk': 'Tambah Produk'; ?></h2>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin</title>
+            <link rel="stylesheet" href="../../assets/css/admin.css">
+    </head>
+    <body>
+        <h2><?php echo $dataEdit ? 'Edit Produk': 'Tambah Produk'; ?></h2>
     <form class="form-produk" action="../../models/simpanProducts.php" method="POST" enctype="multipart/form-data">
     <?php if ($dataEdit): ?>
         <input type="hidden" name="id" value="<?= $dataEdit['id']?>"
@@ -59,3 +67,7 @@ include 'daftarProduct.php';
 ?>
 
 
+
+    </body>
+    </html>
+    
