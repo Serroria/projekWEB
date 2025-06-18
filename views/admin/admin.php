@@ -19,6 +19,7 @@ if (isset($_GET['edit_id'])) {
         <input type="text" name="nama" value="<?= $dataEdit['nama'] ?? '' ?>" required>
     </div>
 
+    
     <div>
         <label class="form-label">Gambar Produk:</label><br>
        <input type="file" name="gambar" value="<?= $dataEdit['gambar'] ?? '' ?> >
