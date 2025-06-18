@@ -15,7 +15,7 @@ if (isset($_GET['edit_id'])) {
     <?php endif; ?>
     
     <div>
-        <label class="form-label">Nama Produk:</label><br>
+        <label class="form-label">Nama Produk Tes:</label><br>
         <input type="text" name="nama" value="<?= $dataEdit['nama'] ?? '' ?>" required>
     </div>
 
