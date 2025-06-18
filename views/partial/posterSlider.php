@@ -48,7 +48,7 @@
 </head>
 <body>
 
-  <div class="posterSlider" style="height: 300px;">
+  <div class="posterSlider">
     <div class="slide slider-active">
       <img src="../../assets/images/tesiklan.jpg" alt="Slide 1">
       <div class="info">

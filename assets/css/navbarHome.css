@@ -91,6 +91,7 @@ body{
     .navbar {
         backdrop-filter: none;
         background-color: #902727;
+        z-index: 100;
     }
 
     /* Memindahkan hamburger bar ke kiri */
