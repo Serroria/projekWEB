@@ -12,7 +12,7 @@
 <footer class="bg-[#902727] text-white py-6 mt-12">
   <div class="container mx-auto flex flex-col items-center justify-center">
     <!-- Logo -->
-    <img src="{{ asset('iconLogo.png') }}" alt="Logo JamuKita" class="w-12 h-12 mb-4" />
+    <img src="../../assets/images/iconLogo.png" alt="Logo JamuKita" class="w-12 h-12 mb-4" />
 
     <!-- Grid Footer -->
     <div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8 text-center items-center mt-6">

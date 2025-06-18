@@ -205,28 +205,29 @@ body {
 .posterSlider {
     position: relative;
     width: 100vw;
-    height: 350px;
+    height: 300px;
     margin: 0 auto;
-    overflow-x: hidden;
+    overflow: hidden;
     margin-top: 0;
     padding-top: 0;
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
+    z-index: 1;
 }
 
 .posterSlider .slide {
   position: absolute;
   width: 100%;
   height: 100%;
-  clip-path: circle(0% at 0 50%);
+  /* clip-path: circle(0% at 0 50%); */
   z-index: 0;
 }
 
 .posterSlider .slide.slider-active {
-    clip-path: circle(100% at 50% 50%);
+    /* clip-path: circle(100% at 50% 50%); */
     z-index: 1;
-    transition: 2.5s;
-    transition-property: clip-path;
+    /* transition: 2.5s;
+    transition-property: clip-path; */
 }
 
 .posterSlider .slide img {
@@ -264,12 +265,16 @@ body {
 }
 
 .posterSlider .navigation {
-  position: absolute;
-  display: flex;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
+  /* transform: translateX(-50%); */
+        z-index: 10;
 }
 
 .posterSlider .navigation .btn {
@@ -291,7 +296,7 @@ body {
 @media (max-width: 620px) {
   .posterSlider {
         width: 100vw;
-        height: 100px;
+        height: 300px;
         margin: 0px;
   }
 
@@ -312,7 +317,14 @@ body {
     }
 
     .posterSlider .navigation {
+        position: absolute;
         bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
     }
 
 
