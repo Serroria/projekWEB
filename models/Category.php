@@ -1,19 +1,19 @@
 <?php
-require_once '../config/koneksi.php';
+include '../config/koneksi.php';
 
 
 class Category
 {
   private $conn;
-  private $table_name = 'categories';
+  private $categories = 'categories';
 
   public function __construct() {
-    $database = new koneksi();
-    $this->conn = $database->getConnection();
+    $db = new koneksi();
+    $this->conn = $db->getConnection();
   }
 
   public function getAll() {
-        $sql = "SELECT id, nama FROM " . $this->table_name . " ORDER BY nama ASC";
+        $sql = "SELECT id, nama FROM " . $this->categories . " ORDER BY nama ASC";
         $result = $this->conn->query($sql);
 
         $categories = [];

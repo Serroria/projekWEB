@@ -24,12 +24,9 @@ if (isset($_GET['edit_id'])) {
        <input type="file" name="gambar" value="<?= $dataEdit['gambar'] ?? '' ?> >
 
     </div>
-
     <div>
         <label class="form-label">Deskripsi Produk:</label><br>
        <textarea name="deskripsi" <?= $dataEdit['deskripsi'] ?? '' ?> ></textarea>
-
-
     </div>
 
     <div>
@@ -41,10 +38,7 @@ if (isset($_GET['edit_id'])) {
             while ($cat= $categories->fetch_assoc()):
             ?>
             <option value="<?=$cat['id'] ?> " <?=isset($dataEdit) && $dataEdit['category_id'] == $cat['id'] ? 'selected' : '' ?> > <?= $cat['nama'] ?></option>
-           
-    
-               
-                </option>
+            </option>
             <?php endwhile; ?>
         </select>
     </div>
@@ -53,12 +47,14 @@ if (isset($_GET['edit_id'])) {
         <label class="form-label">Harga:</label><br>
         <input type="number" name="harga" step="0.01" value="<? $dataEdit['harga'] ?? '' ?>" required>
     </div>
-
-
-
     <button class="btn-form" type="submit">Tambah Produk</button>
 </form>
 
 
 </div>
+
+<?php 
+include 'daftarProduct.php';
+?>
+
 

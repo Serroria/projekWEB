@@ -9,9 +9,9 @@
     <h1>tes</h1>
 
 <div class="navbar">
-    <?php include('../views/partial/navbar.php') ?>
+    <?php include('../partial/navbar.php') ?>
 </div>
-  <?php include('footer.php'); ?>
+  <?php include('../partial/footer.php'); ?>
 
 </body>
 </html>

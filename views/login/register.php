@@ -46,9 +46,9 @@ if(isset($_POST['signin'])){
     $_SESSION['role'] = $row['role'];
 
     if($row['role']=="admin"){
-        header("Location: ../admin/form.php");
+        header("Location: ../admin/admin.php");
     }else {
-         header("Location: ../partial/homepage.php");
+         header("Location: ../layouts/main.php");
     }
     exit();
    } else{
