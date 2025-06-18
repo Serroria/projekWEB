@@ -26,7 +26,8 @@ if (isset($_GET['edit_id'])) {
 
     </div>
     <div>
-        <label class="form-label">Deskripsi Produk:</label><br>
+        
+        <label class="form-label"><br>Deskripsi Produk:</label><br>
        <textarea name="deskripsi" <?= $dataEdit['deskripsi'] ?? '' ?> ></textarea>
     </div>
 
