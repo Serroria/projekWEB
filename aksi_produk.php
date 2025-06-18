@@ -1,5 +1,6 @@
 <?php
-require_once 'models/Product.php';
+require_once 'Product.php';
+
 
 if (isset($_POST['submit'])) {
     $nama = $_POST['nama'];
