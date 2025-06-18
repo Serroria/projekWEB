@@ -1,5 +1,7 @@
-
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 include '../../config/koneksi.php';
 $db = new koneksi();
 $conn = $db->getConnection();
@@ -20,7 +22,7 @@ $conn->close();
 ?>
 
 
-<div class="bg-[#f9f6ee]">
+<div class="">
     <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <h2 class="sr-only">Products</h2>
 
@@ -33,7 +35,7 @@ $conn->close();
                          alt="<?php echo htmlspecialchars($product['nama']); ?>" 
                          class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8">
                     
-                    <div class="flex items-center justify-between mt-4 cursor-pointer" onclick="toggleDesc(<?php echo $product->id; ?>)">
+                    <div class="flex items-center justify-between mt-4 cursor-pointer" onclick="toggleDesc(<?php echo $product['id']; ?>)">
                         <h3 class="text-sm text-gray-700 font-semibold flex items-center">
                              <?php echo htmlspecialchars($product['nama']); ?>
                             <span id="arrowIcon-<?php echo $product['id']; ?>" class="ml-2 transition-transform">▼</span>
@@ -45,20 +47,16 @@ $conn->close();
                         <?php echo nl2br(htmlspecialchars($product['deskripsi'])); ?>
                     </div>
                     <h3><strong>Kategori:</strong> <?php echo $product['kategori']; ?></h3>
-                    <!-- <p><strong>Stok:</strong> <?php echo $product->stok; ?></p> -->
 
-                    <p><strong>Harga:</strong> Rp.  <?php echo number_format($product['harga'], 2, ',', '.'); ?></p>
-                    <!-- {{-- <button class="mt-2 bg-orange-950 hover:bg-red-700 text-white font-bold py-2 px-4 border rounded" 
-                      onclick="location.href='https://shopee.co.id/davidnicolas4?categoryId=100001&entryPoint=ShopByPDP&itemId=43550536931';">
-                      BELI
-                    </button> --}} -->
+                    <p><strong>Harga:</strong> Rp. <?php echo number_format($product['harga'], 2, ',', '.'); ?></p>
+
                     <button onclick="toggleCheckout()" class="buy-btn">Checkout</button>
 
                     <button 
                       class="buy-btn"
-                        data-product-id="<?php echo $product['id']; ?>"
-                        data-product-name="<?php echo htmlspecialchars($product['nama']); ?>"
-                        data-price="<?php echo $product['harga']; ?>"
+                      data-product-id="<?php echo $product['id']; ?>"
+                      data-product-name="<?php echo htmlspecialchars($product['nama']); ?>"
+                      data-price="<?php echo $product['harga']; ?>"
                     >
                       <i class="fa-solid fa-cart-shopping"></i>
                     </button>
@@ -66,7 +64,6 @@ $conn->close();
             </div>
 
             <?php } ?>
-            <!-- More products... -->
         </div>
     </div>
 </div>
@@ -83,8 +80,6 @@ $conn->close();
         <button class="mt-4 bg-blue-600 hover:bg-blue-800 text-white py-2 px-4 rounded" onclick="toggleCheckout()">Tutup</button>
     </div>
 </div>
-
-
 
 <script>
     function toggleDesc(id) {
