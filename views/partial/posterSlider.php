@@ -7,7 +7,7 @@
                 <p>Temukan racikan jamu terbaik untuk menjaga vitalitas tubuh Anda. Sehat alami, lebih berenergi!</p>
             </div>
         </div>
-        <div class="slide">
+        <div class="slide slider-active">
            <img src='../../assets/images/tesiklan.jpg' alt="Poster 1">
             <div class="info">
                 <h2 class='text-white'>Fokus pada Khasiat</h2>
@@ -15,7 +15,7 @@
                 <p>Kembalikan energi dan daya tahan tubuh secara alami. Pilih jamu terbaik dari Jamukita.</p>
             </div>
         </div>
-        <div class="slide">
+        <div class="slide slider-active">
             <img src='../../assets/images/tesiklan.jpg' alt="">
             <div class="info">
                 <h2 class='text-white'>Gaya Hidup Sehat</h2>
@@ -23,7 +23,7 @@
                 <p>Minum jamu, rasakan manfaatnya. Mulai perjalanan sehat Anda bersama Jamukita.</p>
             </div>
         </div>
-        <div class="slide">
+        <div class="slide slider-active">
             <img src='../../assets/images/tesiklan.jpg' alt="">
             <div class="info">
                 <h2 class='text-white'>Sehat Alami, Pilih JamuKita</h2>
