@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website JamuKita</title>
     <link rel="stylesheet" href="../../assets/css/category.css">
+    <link rel="stylesheet" href="../../assets/css/posterSlider.css">
 </head>
 <body>
 
@@ -29,6 +30,7 @@
 </div>
 
 <script src="../../assets/js/category.js"></script>
+<script src="../../assets/js/posterSlide.js"></script>
     
 </body>
 </html>
