@@ -1,9 +1,8 @@
+/* RESET DASAR */
 * {
-    padding:0;
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
-    border: none;
-    outline: none;
     font-family: "Montserrat", sans-serif;
 }
 
@@ -11,177 +10,97 @@ body {
     background-color: #f9f6ee;
 }
 
-.wrapper{
+/* WRAPPER PUSAT */
+.wrapper {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 50px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 8px;
 }
 
+/* SEARCH BAR */
 #search-container {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
-    margin: 20px 0;
+    margin-bottom: 20px;
     width: 100%;
-    max-width: 500px;
 }
 
 #search-input {
     flex: 1;
-    padding: 10px 15px;
-    border: 2px solid #ddd;
-    border-radius: 25px;
+    padding: 12px 20px;
+    border: 2px solid #ccc;
+    border-radius: 30px;
     font-size: 16px;
-    transition: border-color 0.3s;
+    background-color: #fff;
+    transition: all 0.3s ease;
 }
 
-#search-container input{
-    background-color: transparent;
-    width: 40%;
-    border-bottom: 2px solid #110f29;
-    padding: 1em 0.3em;
-}
-
-#search-container input:focus {
-    border-bottom-color: #902727;
+#search-input:focus {
+    border-color: #902727;
     outline: none;
 }
 
-#search-container button{
-    padding: 10px 25px;
+/* TOMBOL CARI */
+#search-container button {
+    padding: 12px 25px;
     background-color: #902727;
     color: white;
     border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    border-radius: 30px;
     font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-#search-container button:hover{
+#search-container button:hover {
     background-color: #7a1f1f;
 }
-/* #search-container button{
-    padding: 1em 2em;
-    margin-left: 1em;
-    background-color: #902727;
-    color: #ffff;
-    border-radius: 5px;
-    margin-top: 0.5em;
-} */
 
-.button-value{
-   border: 2px solid #902727;
-    padding: 0.6em 1.5em;
-    border-radius: 3em;
-    background-color: transparent;
-    color: #902727;
-    cursor: pointer;
-    margin: 0.5em 0.3em;
-    white-space: nowrap;
-    text-align: center;
-}
-.button-value:hover {
-    background-color: #902727;
-    color: #ffff;
-}
-
-.button-value.active {
-    background-color: #902727;
-    color: #ffff !important;
-    border-color: #902727;
-}
-
-.button-value:not(.active):hover {
-    background-color: #902727;
-    color: #ffff;
-}
-
-.active{
-    background-color: #902727;
-    color: #ffff;
-}
-
-/* Flex Layout for Buttons */
+/* BUTTON KATEGORI */
 #buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5em;
+    gap: 10px;
     justify-content: center;
     width: 100%;
 }
 
-/* Tambahkan ini di CSS */
-.grid {
-  display: grid !important;
+.button-value {
+    border: 2px solid #902727;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: transparent;
+    color: #902727;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.product-card {
-  display: block !important; /* Timpa properti display dari JavaScript */
+.button-value:hover,
+.button-value.active {
+    background-color: #902727;
+    color: #fff;
 }
 
-.product-card[hidden] {
-  display: none !important;
-}
-
-
-    /* From Uiverse.io by cssbuttons-io */ 
-.buy-btn {
-  padding: 1.3em 3em;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  font-weight: 500;
-  color: #000;
-  background-color: #fff;
-  border: none;
-  border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
-  cursor: pointer;
-  outline: none;
-}
-
-.buy-btn:hover {
-  background-color: #c42323;
-  box-shadow: 0px 15px 20px rgba(252, 21, 0, 0.4);
-  color: #fff;
-  transform: translateY(-7px);
-}
-
-.buy-btn:active {
-  transform: translateY(-1px);
-}
-
-/* Media Queries */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-     #search-container {
+    #search-container {
         flex-direction: column;
-        gap: 0.5em;
     }
 
-    #search-container input {
-        width: 100%;
-        margin-bottom: 0.5em;
-    }
-
+    #search-input,
     #search-container button {
         width: 100%;
     }
 
-      #buttons {
-        flex-wrap: wrap;
-    }
-
-
     .button-value {
         flex: 1 1 45%;
-        padding: 0.8em 0;
+        text-align: center;
     }
-
 }
-
