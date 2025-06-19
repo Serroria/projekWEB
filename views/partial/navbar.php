@@ -1,8 +1,6 @@
-<?php
-session_start();
-?>
 
 <?php
+session_start();
 $base_url = dirname($_SERVER['SCRIPT_NAME']);
 ?>
 
