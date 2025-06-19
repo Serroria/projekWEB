@@ -14,6 +14,7 @@ if (isset($_GET['edit_id'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Admin</title>
             <link rel="stylesheet" href="../../assets/css/admin.css">
+            <link rel="stylesheet" href="../../assets/css/adminSidebar.css">
     </head>
     <body>
         <h2><?php echo $dataEdit ? 'Edit Produk': 'Tambah Produk'; ?></h2>
@@ -66,6 +67,7 @@ if (isset($_GET['edit_id'])) {
 include 'daftarProduct.php';
 ?>
 
+<script src="../../assets/js/adminSidebar.js"></script>
 
 
     </body>
