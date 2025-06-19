@@ -44,14 +44,14 @@ if (isset($_GET['edit_id'])) {
             
             <li class="profile">
                 <div class="profile-details">
-                    <img src="iconLogo.png" alt="profileImg">
+                    <!-- <img src="iconLogo.png" alt="profileImg"> -->
                     <div class="name_job">
                         <div class="name">JamuKita</div>
                         <div class="job">Web Developer</div>
                     </div>
                 </div>
                
-                <a  class='bx bx-log-out' id="log_out" href="../login/logout.php" onclick="return confirm('Yakin mau logout?')"> <i class='bx bx-log-out' id="log_out" ></i></a>
+                <a  href="../login/logout.php" onclick="return confirm('Yakin mau logout?')"> <i class='bx bx-log-out' id="log_out" ></i></a>
 
             </li>
         </ul>
