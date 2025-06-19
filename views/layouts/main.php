@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website JamuKita</title>
-    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/category.css">
     <link rel="stylesheet" href="../../assets/css/posterSlider.css">
     <link rel="stylesheet" href="../../assets/css/produk.css">

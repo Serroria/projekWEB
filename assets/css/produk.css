@@ -21,20 +21,20 @@ body {
   flex-wrap: wrap;
   gap: 24px;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .product-card {
-  background-color: #fff;
+  background-color:  #f8f6ef;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 16px;
-  max-width: 240px;
-  flex: 1 1 240px;
+  width: 240px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 420px;
+  min-height: unset;
   position: relative;
   overflow: hidden;
 }
@@ -65,6 +65,7 @@ body {
 .product-card p{
     margin: 4px 0;
 }
+
 .product-card strong {
   font-size: 0.9rem;
   color: #444;
@@ -78,10 +79,9 @@ body {
 }
 
 .button-row{
-  display: flex;
+  display: block;
   align-items: center;
   gap: 10px;
-  margin-top: auto;  
 }
 
 .buy-btn {
@@ -107,16 +107,20 @@ body {
   transition: transform 0.2s ease;
 }
 
-.hidden {
-  display: none;
-}
-
 .descBox {
-    /* display: none; */
+    max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
   margin-top: 6px;
   background: #f9f6ee;
-  padding: 8px;
+  padding: 0 8px;
   border-radius: 6px;
   font-size: 0.85rem;
   color: #444;
 }
+
+.descBox.show{
+   max-height: 200px;
+    padding: 8px;
+}
+

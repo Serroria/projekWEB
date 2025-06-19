@@ -17,7 +17,8 @@
         <div class="navbar-container">
             <!--logo-->
             <a href="#" class="navbar-logo">
-                <img src="../assets/images/iconLogo.png" alt="logoJamuKita"></a>
+                <img src="../../assets/images/iconLogo.png" alt="logoJamuKita">
+            </a>
             <button class="navbar-toggle">  
                 <span class="bar"></span>
                 <span class="bar"></span>

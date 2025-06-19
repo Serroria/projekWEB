@@ -24,7 +24,6 @@ $conn->close();
 <div class="container">
   <div class="product-list">
 
-    <!-- Produk 1 -->
     <div class="product-card" data-category="jamuAnak">
       <img src="../../assets/images/buyungupik.jpg" alt="Buyung Upik">
 
@@ -33,7 +32,7 @@ $conn->close();
         <span id="arrowIcon-1" class="arrow-icon">▼</span>
       </h3>
 
-      <div id="descBox-1" class="descBox hidden">
+      <div id="descBox-1" class="descBox">
         <p>Jamu tradisional berbahan dasar kunyit dan asam jawa untuk menyegarkan tubuh dan membantu melancarkan haid.</p>
       </div>
 
@@ -46,7 +45,6 @@ $conn->close();
       </div>
     </div>
 
-    <!-- Produk 2 -->
     <div class="product-card" data-category="jamuHerbal">
       <img src="../../assets/images/jamu-bersalin.png" alt="Jamu Bersalin">
 
@@ -55,7 +53,7 @@ $conn->close();
         <span id="arrowIcon-2" class="arrow-icon">▼</span>
       </h3>
 
-      <div id="descBox-2" class="descBox hidden">
+      <div id="descBox-2" class="descBox">
         Jamu tradisional berbahan dasar kunyit dan asam jawa untuk menyegarkan tubuh dan membantu melancarkan haid.
       </div>
 
@@ -68,7 +66,6 @@ $conn->close();
       </div>
     </div>
 
-        <!-- Produk 3 -->
     <div class="product-card" data-category="jamuHerbal">
       <img src="../../assets/images/jamu-klingsir.png" alt="Jamu Klingsir">
 
@@ -77,7 +74,7 @@ $conn->close();
         <span id="arrowIcon-3" class="arrow-icon">▼</span>
       </h3>
 
-      <div id="descBox-3" class="descBox hidden">
+      <div id="descBox-3" class="descBox">
         Jamu tradisional berbahan dasar kunyit dan asam jawa untuk menyegarkan tubuh dan membantu melancarkan haid.
       </div>
 
