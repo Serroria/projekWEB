@@ -24,7 +24,7 @@ body {
 }
 
 .product-card {
-  background-color: #fff;
+  background-color:  #f8f6ef;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 16px;
@@ -34,7 +34,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 420px;
+  min-height: 460px;
   position: relative;
   overflow: hidden;
 }
@@ -65,6 +65,7 @@ body {
 .product-card p{
     margin: 4px 0;
 }
+
 .product-card strong {
   font-size: 0.9rem;
   color: #444;
@@ -78,7 +79,7 @@ body {
 }
 
 .button-row{
-  display: flex;
+  display: block;
   align-items: center;
   gap: 10px;
   margin-top: auto;  
@@ -112,7 +113,7 @@ body {
 }
 
 .descBox {
-    /* display: none; */
+  display: block;
   margin-top: 6px;
   background: #f9f6ee;
   padding: 8px;
@@ -120,3 +121,4 @@ body {
   font-size: 0.85rem;
   color: #444;
 }
+
