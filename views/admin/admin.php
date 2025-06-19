@@ -11,11 +11,51 @@ $conn = $db->getConnection();
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Admin</title>
+         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
             <link rel="stylesheet" href="../../assets/css/admin.css">
             <link rel="stylesheet" href="../../assets/css/adminSidebar.css">
               <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
+        
+
+    <!--sidebar-->
+     <div class="sidebar">
+        <div class="logo-details">
+            <div class="logo_name">JamuKita Admin</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            
+            <li>
+                <a href="#" onclick="showContent('products')">
+                    <i class='bx bx-chat'></i>
+                    <span class="links_name">Produk</span>
+                </a>
+                <span class="tooltip">Product</span>
+            </li>
+               <!-- <li>
+                <a href="#" onclick="showContent('orders')">
+                    <i class='bx bx-cart-alt'></i>
+                    <span class="links_name">Order</span>
+                </a>
+                <span class="tooltip">Order</span>
+            </li> -->
+            
+            <li class="profile">
+                <div class="profile-details">
+                    <!-- <img src="iconLogo.png" alt="profileImg"> -->
+                    <div class="name_job">
+                        <div class="name">JamuKita</div>
+                        <div class="job">Web Developer</div>
+                    </div>
+                </div>
+               
+                <a  href="../login/logout.php" onclick="return confirm('Yakin mau logout?')"> <i class='bx bx-log-out' id="log_out" ></i></a>
+
+            </li>
+        </ul>
+    </div>
         <div class="content">
        
         <!-- Form Tambah Produk -->
@@ -56,13 +96,13 @@ $conn = $db->getConnection();
 
 </form>
 
-
-</div>
-
 <?php 
 include 'daftarProduct.php';
 ?>
 </div>
+</div>
+
+
 <script src="../../assets/js/adminSidebar.js"></script>
 
 
