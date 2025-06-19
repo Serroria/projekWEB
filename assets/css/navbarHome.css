@@ -1,19 +1,19 @@
-/* General Styles */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+RO:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: "Montserrat", sans-serif;
     min-height: 100vh;
-    background: #f9f6ee;
+    background: #f2e1c7;
 }
 
-.navbar {
+/* Navbar - Mempertahankan CSS Original dengan Enhancement */
+/* .navbar {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,8 +25,8 @@ body{
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
     z-index: 999;
-}
-
+} */
+/* 
 .navbar-container {
     display: flex;
     align-items: center;
@@ -34,24 +34,29 @@ body{
     width: 100%;
     padding: 0 2rem;
     max-width: 1600px;
-}
+} */
 
-.navbar-logo {
-    font-size: 2rem;
-    font-weight: 600;
+/* .navbar-logo {
     color: #fff;
     text-decoration: none;
     cursor: pointer;
-}
-
-.navbar-container .navbar-menu{
+    font-size: 1.8rem;
+    font-weight: 700;
+    /* Menambahkan efek gradien subtle pada logo */
+    /* background: linear-gradient(45deg, #fff, #f2e1c7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}  */
+/* 
+.navbar-container .navbar-menu {
     display: flex;
     text-align: center;
     gap: 1.5rem;
     list-style: none;
-}
+} */
 
-.navbar-container .navbar-menu li a {
+/* .navbar-container .navbar-menu li a {
     text-decoration: none;
     color: #fff;
     font-size: 1.2rem;
@@ -59,39 +64,396 @@ body{
     padding: 3px 20px;
     border-radius: 20px;
     border: 2px solid transparent;
-    transition: all 0.7s ease;
+    transition: all 0.3s ease;
     white-space: nowrap;
-}
+    position: relative;
+    overflow: hidden;
+} */
 
-.navbar-container .navbar-menu li a:hover,
-.navbar-container .navbar-menu li a.active{
+/* Menambahkan efek shimmer pada hover dengan warna original */
+/* .navbar-container .navbar-menu li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(242, 225, 199, 0.2), transparent);
+    transition: left 0.5s;
+} */
+
+/* .navbar-container .navbar-menu li a:hover::before {
+    left: 100%;
+} */
+
+/* .navbar-container .navbar-menu li a:hover,
+.navbar-container .navbar-menu li a.active {
     color: #162530;
     background: #8c2020;
     border: 2px solid #902727;
-}
-.navbar-toggle {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(144, 39, 39, 0.4);
+} */
+
+/* .navbar-toggle {
     display: none;
     background: #902727;
     padding: 10px;
     border: none;
     cursor: pointer;
-}
+} */
 
-.bar{
+/* .bar {
     display: block;
     width: 25px;
     height: 3px;
     margin: 5px auto;
     background-color: #fff;
     transition: all 0.3s ease-in-out;
+}  */
+
+/* Modal Styles - Enhanced dengan warna original */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+     padding: 20px; /* Added padding for small screens */
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
-/*responsive*/
-@media (max-width: 880px){
-    .navbar {
+.modal.show {
+    opacity: 1;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, 
+        #7a2626 0%, 
+        #902727 50%, 
+        #8c2020 100%);
+    color: white;
+    padding: 0;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    overflow: auto;
+    max-height: 90vh; /* Limit height */
+    transform: scale(0.8) translateY(30px);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 
+        0 25px 50px rgba(122, 38, 38, 0.4),
+        0 0 0 1px rgba(242, 225, 199, 0.1),
+        inset 0 1px 0 rgba(242, 225, 199, 0.1);
+        border: 1px solid rgba(242, 225, 199, 0.2); 
+    scrollbar-width: none; /* Untuk Firefox */
+  -ms-overflow-style: none; /* Untuk IE dan Edge */
+    /* border: 2px solid rgba(242, 225, 199, 0.2); */
+}
+.modal-content::-webkit-scrollbar {
+  display: none; /* Untuk Chrome, Safari, dan Opera */
+}
+
+/* Tambahkan padding untuk kontak info */
+.contact-info {
+  padding: 1.5rem;
+}
+/* More compact header */
+.modal-header {
+    padding: 1.5rem 1.5rem 0.5rem;
+}
+
+/* More compact body */
+.modal-body {
+    padding: 0 1.5rem 1.5rem;
+}
+
+
+/* Smaller font sizes for mobile */
+.modal h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.modal-description {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.modal.show .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+
+/* Simplified feature grid for mobile */
+.feature-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+
+/* .feature-card {
+    padding: 1rem;
+    border-radius: 12px;
+} */
+
+/* Optimized contact items */
+.contact-item {
+    padding: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Smaller order steps */
+.order-step {
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Animated border dengan warna brand */
+.modal-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        #f2e1c7 20%, 
+        #fff 40%, 
+        #f2e1c7 60%, 
+        #fff 80%, 
+        transparent);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+/* 
+.modal-header {
+    padding: 2rem 2rem 1rem;
+    text-align: center;
+    position: relative;
+} */
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: rgba(242, 225, 199, 0.8);
+    font-size: 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(242, 225, 199, 0.1);
+    border: 1px solid rgba(242, 225, 199, 0.2);
+}
+
+.close-modal:hover {
+    color: #f2e1c7;
+    background: rgba(242, 225, 199, 0.2);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 0 2rem 2rem;
+}
+
+.modal h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #f2e1c7, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.modal-description {
+    color: rgba(242, 225, 199, 0.9);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+/* 
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+} */
+
+.feature-card {
+    background: rgba(242, 225, 199, 0.1);
+    border: 1px solid rgba(242, 225, 199, 0.2);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #f2e1c7, #fff);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(242, 225, 199, 0.15);
+    box-shadow: 0 15px 35px rgba(122, 38, 38, 0.3);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.feature-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #f2e1c7;
+}
+
+.feature-text {
+    font-size: 0.9rem;
+    color: rgba(242, 225, 199, 0.8);
+}
+
+.contact-info {
+    background: rgba(242, 225, 199, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border: 1px solid rgba(242, 225, 199, 0.2);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    background: rgba(242, 225, 199, 0.1);
+}
+
+.contact-icon {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    width: 30px;
+    color: #f2e1c7;
+}
+
+.order-steps {
+    counter-reset: step-counter;
+}
+
+.order-step {
+    counter-increment: step-counter;
+    background: rgba(242, 225, 199, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #f2e1c7;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.order-step:hover {
+    transform: translateX(5px);
+    background: rgba(242, 225, 199, 0.15);
+}
+
+.order-step::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: -2px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(45deg, #f2e1c7, #fff);
+    color: #902727;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.step-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    margin-left: 2rem;
+    color: #f2e1c7;
+}
+
+.step-description {
+    margin-left: 2rem;
+    color: rgba(242, 225, 199, 0.9);
+    font-size: 0.95rem;
+}
+
+/* Demo content */
+.demo-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #902727;
+}
+
+.demo-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #902727, #7a2626);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.demo-subtitle {
+    color: #7a2626;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Responsive - Mempertahankan CSS Original */
+/* @media (max-width: 880px) { */
+    /* .navbar {
         backdrop-filter: none;
         background-color: #902727;
-        z-index: 100;
     }
 
     .navbar-container {
@@ -122,10 +484,10 @@ body{
         padding: 5rem 1.5rem;
         box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(10px);
-        
+        background: linear-gradient(135deg, #902727, #7a2626);
     }
 
-    .navbar-container .navbar-menu.active{
+    .navbar-container .navbar-menu.active {
         display: flex;
     }
 
@@ -150,52 +512,97 @@ body{
 
     .navbar-toggle.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
-    }
-}
-    
-    .modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    }
-
+    } */
+/* 
     .modal-content {
-        background-color: #7a2626;
-        color: white;
-        padding: 20px;
-        border-radius: 8px;
-        text-align: center;
-        width: 50%;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        width: 95%;
+        margin: 1rem;
     }
 
-    .close-modal {
-        color: white;
-        font-size: 24px;
-        cursor: pointer;
-        float: right;
+    .modal-header, .modal-body {
+        padding: 1.5rem;
     }
 
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+} */
+/* 
+@media (max-width: 480px) {
+    .step-box {
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+  }
 
+  .step-box h3 {
+    font-size: 1.1rem;
+  }
 
-@media (max-width: 480px){
-    .navbar-container {
-        padding: 0 1rem;
+  .step-box p {
+    font-size: 0.9rem;
+  }
+
+  .step-number {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+    top: 1rem;
+    left: 1rem;
+  }
+   .modal-content {
+        width: 95%;
+        max-width: 90vw;
+        padding: 1.5rem 1rem;
+        border-radius: 16px;
     }
 
-    .navbar-logo {
-        font-size: 1.7rem;
+     .modal-header {
+        padding: 1.5rem 1rem 0.5rem;
     }
 
-    .navbar-container .navbar-menu li a {
+    .modal-body {
+        padding: 0 1rem 1.5rem;
+    }
+
+    .modal h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-description {
+        font-size: 1rem;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .step-title,
+    .step-description {
+        margin-left: 1rem;
+    }
+} */
+
+
+/* Very small screens (e.g., iPhone SE) */
+@media (max-width: 320px) {
+    .modal-header {
+        padding: 1rem 1rem 0.25rem;
+    }
+    
+    .modal-body {
+        padding: 0 1rem 1rem;
+    }
+    
+    .modal h2 {
         font-size: 1.3rem;
-        padding: 3px 15px;
+    }
+    
+    .close-modal {
+        top: 0.5rem;
+        right: 0.5rem;
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
     }
 }

@@ -28,12 +28,12 @@ $conn = $db->getConnection();?>
                 <span class="bar"></span>
             </button>
             <ul class="navbar-menu">
-                <li><a href="#" >Beranda</a></li>
                 <li><a href="../login/logout.php" class="text-sm text-gray-800 hover:underline">Logout</a></li>
             </ul>
         </div>
 </nav>
         <div class="content">
+            <h1>Dashboard Admin</h1>
        
         <!-- Form Tambah Produk -->
         <h2 class="mb-3">Tambah Produk</h2>
