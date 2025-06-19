@@ -1,3 +1,7 @@
+<?php
+$base_url = dirname($_SERVER['SCRIPT_NAME']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +13,7 @@
 
   <div class="posterSlider">
     <div class="slide slider-active">
-      <img src="../../assets/images/tesiklan.jpg" alt="Slide 1">
+      <img src="<?= $base_url ?>/assets/images/tesiklan.jpg" alt="Slide 1">
       <div class="info">
         <h2>JamuKita</h2>
         <h3 class="text-white"><b>Kesehatan Alami, Pilihan Tradisi</b></h3>
@@ -18,7 +22,7 @@
     </div>
 
     <div class="slide">
-      <img src="../../assets/images/jahe.jpg" alt="Slide 2">
+      <img src="<?= $base_url ?>/assets/images/jahe.jpg" alt="Slide 2">
       <div class="info">
         <h2 class="text-white">Fokus pada Khasiat</h2>
         <h3 class="text-white"><b>Jaga Daya Tahan Tubuh dengan Jamukita</b></h3>
@@ -27,7 +31,7 @@
     </div>
 
     <div class="slide">
-      <img src="../../assets/images/herbal.jpg" alt="Slide 3">
+      <img src="<?= $base_url ?>/assets/images/herbal.jpg" alt="Slide 3">
       <div class="info">
         <h2 class="text-white">Gaya Hidup Sehat</h2>
         <h3 class="text-white"><b>Nikmati Hidup Sehat Setiap Hari</b></h3>
@@ -36,7 +40,7 @@
     </div>
 
     <div class="slide">
-      <img src="../../assets/images/jamuPic.jpeg" alt="Slide 4">
+      <img src="<?= $base_url ?>/assets/images/jamuPic.jpeg" alt="Slide 4">
       <div class="info">
         <h2 class="text-white">Sehat Alami, Pilih JamuKita</h2>
         <h3 class="text-white"><b>Segarkan Tubuh, Dukung Imunitas - Mulai Belanja Sekarang!</b></h3>

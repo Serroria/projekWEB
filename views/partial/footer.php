@@ -1,3 +1,6 @@
+<?php
+$base_url = dirname($_SERVER['SCRIPT_NAME']);
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -57,7 +60,7 @@
   <!-- Footer Tengah -->
   <footer class="footer">
     <div class="flex justify-center items-center">
-  <img src="../../assets/images/iconLogo.png" alt="Logo JamuKita" class="w-12 h-12 mb-2" />
+  <img src="<?= $base_url ?>/assets/images/iconLogo.png" alt="Logo JamuKita" class="w-12 h-12 mb-2" />
     </div>
     <h3>Ikuti Kami</h3>
     <div class="social-icons">

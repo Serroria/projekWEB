@@ -1,5 +1,5 @@
 <?php
-include_once '../../config/koneksi.php';
+include_once __DIR__ . '/../../config/koneksi.php';
 $db = new koneksi();
 $conn = $db->getConnection();
 
@@ -16,6 +16,9 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 ?>
+<?php
+$base_url = dirname($_SERVER['SCRIPT_NAME']);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +32,7 @@ $conn->close();
   <div class="product-list">
     <?php foreach ($products as $product): ?>
       <div class="product-card" data-category="<?= htmlspecialchars($product['kategori']) ?>">
-        <img src="../../uploads/<?= htmlspecialchars($product['gambar']) ?>" alt="<?= htmlspecialchars($product['nama']) ?>">
+        <img src="<?= $base_url ?>/uploads/<?= htmlspecialchars($product['gambar']) ?>" alt="<?= htmlspecialchars($product['nama']) ?>">
 
         <h3 onclick="toggleDesc(<?= $product['id'] ?>)">
           <?= htmlspecialchars($product['nama']) ?>

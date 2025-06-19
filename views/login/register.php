@@ -23,8 +23,20 @@ if(isset($_POST ['signup'])) {
     } else {
         $insertQuery= "INSERT INTO users(firstName, lastName, email, password, role)
                     VALUES ('$firstName','$lastName','$email','$password', '$role')";
+                    
         if($conn->query($insertQuery)==TRUE){
-            header("location: homepage.php");
+           // Ambil data user yang baru didaftarkan
+            $getUser = "SELECT * FROM users WHERE email='$email'";
+            $userResult = $conn->query($getUser);
+            $row = $userResult->fetch_assoc();
+        
+            session_start();
+        $_SESSION['login'] = true;
+        $_SESSION['nama'] = $row['firstName'];
+         $_SESSION['email'] = $row['email'];
+            $_SESSION['role'] = $row['role'];
+
+            header("Location: ../../index.php");
         } else{
             echo "Error:".$conn->error;
         }
@@ -40,16 +52,19 @@ if(isset($_POST['signin'])){
    $sql="SELECT * FROM users WHERE email='$email' and password='$password'";
    $result=$conn->query($sql);
    if($result->num_rows>0){
+    $row=$result->fetch_assoc(); //ambil data dulu baru simpan ke session
+    
     session_start();
-    $row=$result->fetch_assoc();
-    $_SESSION['email']=$row['email'];
+    $_SESSION['login'] = true;
+    $_SESSION['nama'] = $row['firstName'];
+    $_SESSION['email'] = $row['email'];
     $_SESSION['role'] = $row['role'];
 
     if($row['role']=="admin"){
         // header("Location: ../../controllers/crud admin/admin_dashboard.php");
           header('Location: ../admin/admin.php');
     }else {
-         header("Location: ../layouts/main.php");
+        header("Location: ../../index.php");
     }
     exit();
    } else{
