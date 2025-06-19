@@ -46,7 +46,7 @@ if(isset($_POST['signin'])){
     $_SESSION['role'] = $row['role'];
 
     if($row['role']=="admin"){
-        header("Location: ../admin/admin.php");
+        header("Location: ../../controllers/crud admin/admin_dashboard.php");
     }else {
          header("Location: ../layouts/main.php");
     }

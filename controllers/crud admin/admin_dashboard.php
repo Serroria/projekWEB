@@ -13,8 +13,27 @@ $conn = $db->getConnection();
     <title>Admin Dashboard</title>
     <!-- Tambahkan Link Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="../../assets/css/adminSidebar.css">
 </head>
 <body>
+        <!--navbar-->
+<nav class="navbar">
+        <div class="navbar-container">
+            <!--logo-->
+            <a href="#" class="navbar-logo">
+                <img src="../../assets/images/iconLogo.png" alt="logoJamuKita">
+            </a>
+            <button class="navbar-toggle">  
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="navbar-menu">
+              
+                <li><a href="../../views/login/logout.php" class="text-sm text-gray-800 hover:underline">Logout</a></li>
+            </ul>
+        </div>
+</nav>
     <div class="container mt-5">
         <h1 class="mb-4">Admin Dashboard</h1>
 
@@ -107,5 +126,6 @@ $conn = $db->getConnection();
             checkboxes.forEach(checkbox => checkbox.checked = e.target.checked);
         });
     </script>
+    <script src="../../assets/js/adminSidebar.js"></script>
 </body>
 </html>

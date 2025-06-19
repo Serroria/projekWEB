@@ -1,6 +1,8 @@
 <!--daftar produk-->
 <div class="container-table">
+<form action="../../controllers/crud admin/deleteProduct.php" method="POST">
 <table class="table-produk">
+    <thead>
     <tr>
         <th>#</th>
         <th>Gambar</th>
@@ -10,49 +12,36 @@
         <th>Harga</th>
         <th>Aksi</th>
     </tr>
+    </thead>
     <tbody>
-      
+    <?php
+    // Ambil data produk
+    $products = $conn->query(
+        "SELECT products.id, products.nama, products.harga, products.gambar, products.deskripsi, categories.nama AS category_name
+                FROM products
+                JOIN categories ON products.category_id = categories.id"
+                    );
 
-        <tr>
-            <td data-th="No"></td>
-            <td data-th="Gambar">
-                <img src="" alt="" width="60">
-            </td>
-            <td data-th="Nama"></td>
-     
+                    while ($product = $products->fetch_assoc()) {
+                        echo "<tr>
+                                <td><input type='checkbox' name='delete_ids[]' value='{$product['id']}'></td>
+                                <td>{$product['id']}</td>
+                                <td>{$product['nama']}</td>
+                                <td>{$product['category_name']}</td>
+                                <td>" . number_format($product['harga'], 0, '', '.') . "</td>
+                                <td>{$product['deskripsi']}</td>
+                                <td><img src='../../uploads/{$product['gambar']}' alt='{$product['nama']}' style='width:100px;'></td>
+                              </tr>";
+                    }
+    ?>
 
-            <td data-th="Desc"></td>
-            <td data-th="Kategori"></td>
-            <td data-th="Harga">Rp.</td>
+         </tbody>
+            </table>
+            <button type="submit" name="delete_selected" class="btn btn-danger">Hapus Produk Terpilih</button>
+        </form>
+    </div>
 
-            <td data-th="Aksi" >
-                <!-- From Uiverse.io by aaronross1 --> 
-              <!-- From Uiverse.io by mrhyddenn --> 
-              <a href="">>  
-              <button>
-                Edit
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                    <path
-                    fill="currentColor"
-                    d="M20 17h2v2H2v-2h2v-7a8 8 0 1 1 16 0v7zm-2 0v-7a6 6 0 1 0-12 0v7h12zm-9 4h6v2H9v-2z"
-                    ></path>
-                </svg>
-                </button>
-            </a>
-
-              
-                <form   style="display: inline;" onsubmit="return confirm('Yakin ingin menghapus?');">
-                <input type="hidden" name="id" >
-                <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
-            </form>
-            </td>
-
-
-        </tr>
-     
-        <tr>
-            <td colspan="6" class="text-center text-muted">Belum ada produk.</td>
-        </tr>
+        </form>
       
     </tbody>
 </table>

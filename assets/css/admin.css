@@ -402,6 +402,7 @@ button {
   padding: 15px 15px;
   border-radius: 10px;
   cursor: pointer;
+  color: #7e3333;
 }
 
 button:hover {
@@ -410,7 +411,7 @@ button:hover {
 }
 
 button svg {
-  color: #fff;
+  color: #421616;
 }
 
 select.form-control {
@@ -418,7 +419,7 @@ select.form-control {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
-    background-color: #fff;
+    background-color: #531111;
     font-size: 14px;
     transition: border-color 0.3s;
 }
