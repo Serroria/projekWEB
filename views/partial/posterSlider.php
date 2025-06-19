@@ -56,6 +56,5 @@ $base_url = dirname($_SERVER['SCRIPT_NAME']);
     </div>
   </div>
 
-  <script src="posterSlider.js"></script>
 </body>
 </html>
