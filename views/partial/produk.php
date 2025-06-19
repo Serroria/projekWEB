@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -19,9 +19,9 @@ if ($result->num_rows > 0) {
 }
 
 $conn->close();
-?>
+?> -->
 
-<div class="container">
+<!-- <div class="container">
   <div class="product-list">
 
     <div class="product-card" data-category="jamuAnak">
@@ -88,7 +88,7 @@ $conn->close();
     </div>
 
   </div>
-</div>
+</div> -->
 
 
         <!-- <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
@@ -166,3 +166,78 @@ $conn->close();
     }
 </script> -->
 
+<!-- <div class="container">
+  <div class="product-list">
+    <?php foreach ($products as $index => $product): ?>
+      <div class="product-card" data-category="<?= htmlspecialchars($product['kategori']) ?>">
+        <img src="../../uploads/<?= htmlspecialchars($product['gambar']) ?>" alt="<?= htmlspecialchars($product['nama']) ?>">
+
+        <h3 onclick="toggleDesc(<?= $product['id'] ?>)">
+          <?= htmlspecialchars($product['nama']) ?>
+          <span id="arrowIcon-<?= $product['id'] ?>" class="arrow-icon">▼</span>
+        </h3>
+
+        <div id="descBox-<?= $product['id'] ?>" class="descBox hidden mt-2 text-sm text-gray-600">
+          <p><?= htmlspecialchars($product['deskripsi']) ?></p>
+        </div>
+
+        <p><strong>Kategori:</strong> <?= htmlspecialchars($product['kategori']) ?></p>
+        <p><strong>Harga:</strong> Rp <?= number_format($product['harga'], 0, ',', '.') ?></p>
+
+        <div class="button-row">
+          <button onclick="toggleCheckout()" class="buy-btn">Checkout</button>
+        </div>
+      </div>
+    <?php endforeach; ?>
+  </div>
+</div> -->
+
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+require_once '../../config/koneksi.php';
+$db = new koneksi();
+$conn = $db->getConnection();
+
+$sql = "SELECT p.id, p.nama, p.gambar, p.deskripsi, p.harga, c.nama AS kategori
+        FROM products p
+        JOIN categories c ON p.category_id = c.id";
+$result = $conn->query($sql);
+
+$products = [];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $products[] = $row;
+    }
+}
+$conn->close();
+?>
+
+<div class="container">
+  <div class="product-list">
+    <?php foreach ($products as $product): ?>
+      <div class="product-card" data-category="<?= htmlspecialchars($product['kategori']) ?>">
+        <img src="../../uploads/<?= htmlspecialchars($product['gambar']) ?>" alt="<?= htmlspecialchars($product['nama']) ?>">
+
+        <h3 onclick="toggleDesc(<?= $product['id'] ?>)">
+          <?= htmlspecialchars($product['nama']) ?>
+          <span id="arrowIcon-<?= $product['id'] ?>" class="arrow-icon">▼</span>
+        </h3>
+
+        <div id="descBox-<?= $product['id'] ?>" class="descBox">
+          <p><?= htmlspecialchars($product['deskripsi']) ?></p>
+        </div>
+
+        <p><strong>Kategori:</strong> <?= htmlspecialchars($product['kategori']) ?></p>
+        <p><strong>Harga:</strong> Rp. <?= number_format($product['harga'], 0, ',', '.') ?></p>
+
+        <div class="button-row">
+          <button onclick="toggleCheckout()" class="buy-btn">Checkout</button>
+        </div>
+      </div>
+    <?php endforeach; ?>
+  </div>
+</div>
+
+<script src="../../assets/js/produk.js"></script>
