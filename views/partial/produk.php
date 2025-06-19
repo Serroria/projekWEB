@@ -33,8 +33,8 @@ $conn->close();
         <span id="arrowIcon-1" class="arrow-icon">▼</span>
       </h3>
 
-      <div id="descBox-1" class="description hidden">
-        Jamu tradisional berbahan dasar kunyit dan asam jawa untuk menyegarkan tubuh dan membantu melancarkan haid.
+      <div id="descBox-1" class="descBox hidden">
+        <p>Jamu tradisional berbahan dasar kunyit dan asam jawa untuk menyegarkan tubuh dan membantu melancarkan haid.</p>
       </div>
 
       <p><strong>Kategori:</strong> Jamu Anak</p>
@@ -55,7 +55,29 @@ $conn->close();
         <span id="arrowIcon-2" class="arrow-icon">▼</span>
       </h3>
 
-      <div id="descBox-2" class="description hidden">
+      <div id="descBox-2" class="descBox hidden">
+        Jamu tradisional berbahan dasar kunyit dan asam jawa untuk menyegarkan tubuh dan membantu melancarkan haid.
+      </div>
+
+      <p><strong>Kategori:</strong> Jamu Herbal</p>
+      <p><strong>Harga:</strong> Rp. 15.000,00</p>
+
+      <div class="button-row">
+        <button onclick="toggleCheckout()" class="buy-btn">Checkout</button>
+        </button>
+      </div>
+    </div>
+
+        <!-- Produk 3 -->
+    <div class="product-card" data-category="jamuHerbal">
+      <img src="../../assets/images/jamu-klingsir.png" alt="Jamu Klingsir">
+
+      <h3 onclick="toggleDesc(3)">
+        Jamu Bersalin
+        <span id="arrowIcon-3" class="arrow-icon">▼</span>
+      </h3>
+
+      <div id="descBox-3" class="descBox hidden">
         Jamu tradisional berbahan dasar kunyit dan asam jawa untuk menyegarkan tubuh dan membantu melancarkan haid.
       </div>
 
@@ -127,18 +149,23 @@ $conn->close();
     </div>
 </div> -->
 
-<script>
-function toggleDesc(id) {
-    const descBox = document.getElementById('descBox-' + id);
-    const arrowIcon = document.getElementById('arrowIcon-' + id);
+<!-- <script>
+    function toggleDesc(id) {
+        const descBox = document.getElementById('descBox-' + id);
+        const arrowIcon = document.getElementById('arrowIcon-' + id);
 
-    if (descBox.style.display === 'none' || !descBox.style.display) {
-        descBox.style.display = 'block';
-        arrowIcon.innerHTML = '▲';
-    } else {
-        descBox.style.display = 'none';
-        arrowIcon.innerHTML = '▼';
+        if (descBox.classList.contains('hidden')) {
+            descBox.classList.remove('hidden');
+            arrowIcon.innerHTML = '▲';
+        } else {
+            descBox.classList.add('hidden');
+            arrowIcon.innerHTML = '▼';
+        }
     }
-}
-</script>
+
+    function toggleCheckout() {
+        const modal = document.getElementById('checkoutModal');
+        modal.classList.toggle('hidden');
+    }
+</script> -->
 

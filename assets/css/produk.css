@@ -35,6 +35,8 @@ body {
   flex-direction: column;
   justify-content: space-between;
   min-height: 420px;
+  position: relative;
+  overflow: hidden;
 }
 
 .product-card:hover {
@@ -107,4 +109,14 @@ body {
 
 .hidden {
   display: none;
+}
+
+.descBox {
+    /* display: none; */
+  margin-top: 6px;
+  background: #f9f6ee;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #444;
 }

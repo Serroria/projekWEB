@@ -7,7 +7,7 @@
     <link href="https://cdn.tailwindcss.com" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/category.css">
     <link rel="stylesheet" href="../../assets/css/posterSlider.css">
-    <link rel="stylesheet" href="../../assets/css/homepage.css">
+    <link rel="stylesheet" href="../../assets/css/produk.css">
 </head>
 <body>
 
@@ -24,7 +24,7 @@
 </div>
 
 <div class="homepage">
-    <?php include('../partial/homepage.php'); ?>
+    <?php include('../partial/produk.php'); ?>
 
 </div>
 <div class="footer">
@@ -33,6 +33,7 @@
 
 <script src="../../assets/js/category.js"></script>
 <script src="../../assets/js/posterSlider.js"></script>
-    
+<script src="../../assets/js/produk.js"></script>
+
 </body>
 </html>
