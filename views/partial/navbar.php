@@ -36,7 +36,7 @@ $base_url = dirname($_SERVER['SCRIPT_NAME']);
                 <li><a href="#" class="menu-item">Tentang Kami</a></li>
                 <li><a href="#" class="menu-item">Cara Order</a></li>
                 <li><a href="#" class="menu-item">Kontak Kami</a></li>
-                <li><a href="{{ route('cart.view') }}" class="text-sm text-gray-800 hover:underline">🛒 Keranjang</a></li>
+                <li><a href="/controllers/add to cart/cart_page.php" class="text-sm text-gray-800 hover:underline">🛒 Keranjang</a></li>
              <?php if (isset($_SESSION['login']) && $_SESSION['login'] === true): ?>
                 
                 <li><a href="<?= $base_url ?>/views/login/logout.php" class="text-sm text-red-600 hover:underline">Logout</a></li>

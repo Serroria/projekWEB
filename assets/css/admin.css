@@ -272,9 +272,9 @@
 /* Untuk konten utama */
 .content {
     position: relative;
-    background: #f9f6ee;
+    background: #ffffff;
     min-height: 100vh;
-    margin-left: 78px;
+    margin-left: 20px;
     width: calc(100% - 78px);
     transition: all 0.5s ease;
 }
