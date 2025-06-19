@@ -23,8 +23,12 @@ if(isset($_POST ['signup'])) {
     } else {
         $insertQuery= "INSERT INTO users(firstName, lastName, email, password, role)
                     VALUES ('$firstName','$lastName','$email','$password', '$role')";
+                     session_start();
+
+    $_SESSION['login'] = true;
+    $_SESSION['nama'] = $row['firstName'];
         if($conn->query($insertQuery)==TRUE){
-            header("location: homepage.php");
+            header("Location: ../layouts/main.php");
         } else{
             echo "Error:".$conn->error;
         }
