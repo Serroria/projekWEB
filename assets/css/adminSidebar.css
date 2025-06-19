@@ -337,64 +337,8 @@ textarea{
 
 }
 
-.table-produk{
-    margin: 1em 0;
-    min-width: 300px;
-    background-color: #902727;
-    color: #fff;
-    border-radius: .4em;
-    overflow: hidden;
-}
-
-.table-produk tr{
-     display: block;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-
-}
-.table-produk td {
-    display: block;
-    text-align: left;
-    padding: 10px;
-    position: relative;
-    border-bottom: 1px solid #a33b3b;
-    background-color: #902727;
-}
-.table-produk th, .table-produk td{
-    text-align: left;
-    margin: .5em 1em;
-
-}
 /* Mobile-first (default) */
-.table-produk td {
-    display: block;
-     background-color: #902727; /* warna isi tabel */
-    color: #fff;
-    padding: 10px;
-}
 
-.table-produk th {
-    display: none;
-      background-color: #6d1e1e;
-      color: #fff;
-}
-
-.table-produk td::before {
-     content: attr(data-th) ": ";
-    font-weight: bold;
-    display: inline-block;
-    width: 40%;
-    color: #fff;
-}
-
-.table-produk th {
-    display: none; /* hide table headers */
-}
-
-.table-produk tr:nth-child(even) td {
-    background-color: #a33b3b;
-}
 /* From Uiverse.io by mrhyddenn */ 
 button {
   background: none;
@@ -432,12 +376,8 @@ select.form-control:focus {
 
 
 /* Desktop mode */
-@media (min-width: 600px) {
+/* @media (min-width: 600px) {
     .table-produk {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
     .table-produk tr {
         display: table-row;
          border: none;
@@ -466,5 +406,9 @@ select.form-control:focus {
 
     .btn-form {
         width: 100%;
+    }    width: 100%;
+        border-collapse: collapse;
     }
-}
+
+    
+} */

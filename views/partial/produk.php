@@ -70,7 +70,7 @@ $conn->close();
       <img src="../../assets/images/jamu-klingsir.png" alt="Jamu Klingsir">
 
       <h3 onclick="toggleDesc(3)">
-        Jamu Bersalin
+        Jamu Klingsir
         <span id="arrowIcon-3" class="arrow-icon">▼</span>
       </h3>
 
