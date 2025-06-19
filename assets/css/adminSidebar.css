@@ -5,7 +5,6 @@
     font-family: "Poppins", sans-serif;
 }
 
-/* SIDEBAR */
 .sidebar {
     position: fixed;
     left: 0;
@@ -93,6 +92,7 @@
 
 .sidebar.open input {
     padding: 0 20px 0 50px;
+    width: 100%;
 }
 
 .sidebar .bx-search {
@@ -245,20 +245,19 @@
     background: none;
 }
 
-/* HOME SECTION */
 .home-section {
     position: relative;
     background: #e4e9f7;
     min-height: 100vh;
     top: 0;
     left: 78px;
-    width: calc(100% - 78px);
+    width: calc(100% -78px);
     transition: all 0.5s ease;
 }
 
-.sidebar.open ~ .home-section {
+.sidebar.open~.home-section {
     left: 250px;
-    width: calc(100% - 250px);
+    width: calc(100%-250px);
 }
 
 .home-section .text {
@@ -269,7 +268,7 @@
     margin: 18px;
 }
 
-/* CONTENT SECTION */
+/* Untuk konten utama */
 .content {
     position: relative;
     background: #e4e9f7;
@@ -277,14 +276,16 @@
     margin-left: 78px;
     width: calc(100% - 78px);
     transition: all 0.5s ease;
-    padding: 50px;
 }
 
 .sidebar.open ~ .content {
     margin-left: 250px;
     width: calc(100% - 250px);
 }
-
+.content{
+    padding: 50px;
+}
+/* Untuk section konten */
 .content-section {
     display: none;
     padding: 20px;
@@ -294,12 +295,11 @@
     display: block;
 }
 
-.container-table {
+.container-table{
     padding: 4px;
+    
 }
-
-.form-label,
-input {
+.form-label, input{
     display: block;
     width: 100%;
     padding: 8px;
@@ -307,8 +307,8 @@ input {
     color: #902727;
 }
 
-textarea {
-    display: block;
+textarea{
+     display: block;
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
@@ -324,8 +324,7 @@ textarea {
     background-color: #fff;
     box-sizing: border-box;
 }
-
-.form-label {
+.form-label{
     margin-left: -8px;
     margin-top: 10px;
 }
@@ -335,9 +334,10 @@ textarea {
     margin-top: 10px;
     background-color: #6d1e1e;
     color: #fff;
+
 }
 
-.table-produk {
+.table-produk{
     margin: 1em 0;
     min-width: 300px;
     background-color: #902727;
@@ -346,30 +346,42 @@ textarea {
     overflow: hidden;
 }
 
-.table-produk tr {
-    display: block;
+.table-produk tr{
+     display: block;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 10px;
-}
 
-.table-produk td,
-.table-produk th {
+}
+.table-produk td {
+    display: block;
+    text-align: left;
+    padding: 10px;
+    position: relative;
+    border-bottom: 1px solid #a33b3b;
+    background-color: #902727;
+}
+.table-produk th, .table-produk td{
     text-align: left;
     margin: .5em 1em;
+
+}
+/* Mobile-first (default) */
+.table-produk td {
+    display: block;
+     background-color: #902727; /* warna isi tabel */
+    color: #fff;
     padding: 10px;
 }
 
-.table-produk td {
-    display: block;
-    background-color: #902727;
-    color: #fff;
-    position: relative;
-    border-bottom: 1px solid #a33b3b;
+.table-produk th {
+    display: none;
+      background-color: #6d1e1e;
+      color: #fff;
 }
 
 .table-produk td::before {
-    content: attr(data-th) ": ";
+     content: attr(data-th) ": ";
     font-weight: bold;
     display: inline-block;
     width: 40%;
@@ -377,34 +389,31 @@ textarea {
 }
 
 .table-produk th {
-    display: none;
-    background-color: #6d1e1e;
-    color: #fff;
+    display: none; /* hide table headers */
 }
 
 .table-produk tr:nth-child(even) td {
     background-color: #a33b3b;
 }
-
-/* BUTTON UNIVERSAL */
+/* From Uiverse.io by mrhyddenn */ 
 button {
-    background: none;
-    border: none;
-    padding: 15px 15px;
-    border-radius: 10px;
-    cursor: pointer;
+  background: none;
+  border: none;
+  padding: 15px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
 }
 
 button:hover {
-    background: rgba(89, 22, 22, 0.062);
-    transition: 0.5s;
+  background: rgba(89, 22, 22, 0.062);
+  transition: 0.5s;
 }
 
 button svg {
-    color: #fff;
+  color: #fff;
 }
 
-/* SELECT */
 select.form-control {
     width: 100%;
     padding: 10px;
@@ -421,7 +430,8 @@ select.form-control:focus {
     box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
 }
 
-/* DESKTOP RESPONSIVE */
+
+/* Desktop mode */
 @media (min-width: 600px) {
     .table-produk {
         width: 100%;
@@ -430,18 +440,18 @@ select.form-control:focus {
 
     .table-produk tr {
         display: table-row;
-        border: none;
+         border: none;
     }
 
     .table-produk th,
     .table-produk td {
         display: table-cell;
         padding: 1em;
-        border-bottom: 1px solid #ddd;
+         border-bottom: 1px solid #ddd;
     }
 
     .table-produk th {
-        background-color: #902727;
+         background-color: #902727;
         color: #fff;
     }
 
@@ -449,7 +459,7 @@ select.form-control:focus {
         display: none;
     }
 
-    .form-produk {
+     .form-produk {
         padding: 15px;
         margin: 20px 10px;
     }
