@@ -100,17 +100,17 @@ if (isset($_GET['edit_id'])) {
         <label class="form-label">Harga:</label><br>
         <input type="number" name="harga" step="0.01" value="<? $dataEdit['harga'] ?? '' ?>" required>
     </div>
-    <button class="btn-form" type="submit">Tambah Produk</button>
+    <button class="btn-form" type="submit">Add</button>
 </form>
+<?php 
+include 'daftarProduct.php';
+?>
 
 
 </div>
 
 <!--daftarporduk-->
 
-<?php 
-include 'daftarProduct.php';
-?>
 
 </div>
 <script src="../../assets/js/adminSidebar.js"></script>

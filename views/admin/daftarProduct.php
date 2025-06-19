@@ -1,6 +1,7 @@
 <!--daftar produk-->
 <div class="container-table">
 <table class="table-produk">
+    <thead>
     <tr>
         <th>#</th>
         <th>Gambar</th>
@@ -10,6 +11,8 @@
         <th>Harga</th>
         <th>Aksi</th>
     </tr>
+    </thead>
+    
     <tbody>
       
 
