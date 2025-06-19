@@ -3,10 +3,10 @@ include '../../config/koneksi.php';
 $db = new koneksi();
 $conn = $db->getConnection();
 
-if (isset($_GET['delete_cart'])) {
-    $cart_id = $_GET['delete_cart'];
+if (isset($_GET['cart_id'])) {
+    $cart_id = intval($_GET['cart_id']);
 
-    $delete_cart = $conn->prepare("DELETE FROM cart WHERE id = ?");
+    $delete_cart = $conn->prepare("DELETE FROM carts WHERE id = ?");
     $delete_cart->bind_param('i', $cart_id);
     $delete_cart->execute();
 
