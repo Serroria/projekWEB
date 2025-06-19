@@ -51,7 +51,5 @@ $conn->close();
   </div>
 </div>
 
-<script src="../../assets/js/produk.js"></script>
-
 </body>
 </html>
