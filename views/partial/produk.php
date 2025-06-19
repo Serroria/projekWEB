@@ -24,7 +24,7 @@ $conn->close();
 <div class="container">
   <div class="product-list">
 
-    <div class="product-card" data-category="jamuAnak">
+    <div class="product-card" data-category="<?php echo htmlspecialchars($product['kategori']); ?>">
       <img src="../../assets/images/buyungupik.jpg" alt="Buyung Upik">
 
       <h3 onclick="toggleDesc(1)">
