@@ -27,7 +27,8 @@ if (isset($_POST['add_product'])) {
     $add_product->bind_param('sssdi', $name, $gambar, $description, $category_id, $price);
     $add_product->execute();
 
-    header('Location: admin_dashboard.php');
+    // header('Location: admin_dashboard.php');
+    header('Location: ../../views/admin/admin.php');
     exit;
 }
 ?>

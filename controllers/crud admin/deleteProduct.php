@@ -22,7 +22,8 @@ if (isset($_POST['delete_selected'])) {
             $conn->query("ALTER TABLE products AUTO_INCREMENT = 1");
         }
 
-        header('Location: admin_dashboard.php');
+        // header('Location: admin_dashboard.php');
+          header('Location: ../../views/admin/admin.php');
         exit;
     } else {
         echo "Tidak ada produk yang dipilih untuk dihapus.";
