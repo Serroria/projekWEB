@@ -37,8 +37,8 @@ body{
 }
 
 .navbar-logo {
-    /* font-size: 2rem;
-    font-weight: 600; */
+    font-size: 2rem;
+    font-weight: 600;
     color: #fff;
     text-decoration: none;
     cursor: pointer;
@@ -91,15 +91,14 @@ body{
     .navbar {
         backdrop-filter: none;
         background-color: #902727;
+        z-index: 100;
     }
 
-    /* Memindahkan hamburger bar ke kiri */
     .navbar-container {
         justify-content: flex-start;
         align-items: flex-start;
     }
 
-    /* Mempertahankan logo di tengah */
     .navbar-logo {
         width: 100%;
         text-align: center;

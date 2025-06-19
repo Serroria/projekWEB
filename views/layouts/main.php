@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website JamuKita</title>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/category.css">
     <link rel="stylesheet" href="../../assets/css/posterSlider.css">
+    <link rel="stylesheet" href="../../assets/css/produk.css">
 </head>
 <body>
 
@@ -22,7 +24,7 @@
 </div>
 
 <div class="homepage">
-    <?php include('../partial/homepage.php'); ?>
+    <?php include('../partial/produk.php'); ?>
 
 </div>
 <div class="footer">
@@ -31,6 +33,7 @@
 
 <script src="../../assets/js/category.js"></script>
 <script src="../../assets/js/posterSlider.js"></script>
-    
+<script src="../../assets/js/produk.js"></script>
+
 </body>
 </html>

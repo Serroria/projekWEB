@@ -21,39 +21,78 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 
+<div class="container">
+  <div class="product-list">
 
-<div class="">
-    <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <h2 class="sr-only">Products</h2>
+    <!-- Produk 1 -->
+    <div class="product-card" data-category="jamuAnak">
+      <img src="../../assets/images/buyungupik.jpg" alt="Buyung Upik">
 
-        <div class="max-w-sm mx-auto product-card" data-category="Jamu Kesehatan">
-        <div class="group block">
-           <img src="../../assets/images/buyungupik.jpg" 
-               alt="Buyung Upik" 
-               class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8">
-          
-          <div class="flex items-center justify-between mt-4 cursor-pointer" onclick="toggleDesc(1)">
-            <h3 class="text-sm text-gray-700 font-semibold flex items-center">
-              Buyung Upik
-              <span id="arrowIcon-1" class="ml-2 transition-transform">▼</span>
-            </h3>
-          </div>
+      <h3 onclick="toggleDesc(1)">
+        Buyung Upik
+        <span id="arrowIcon-1" class="arrow-icon">▼</span>
+      </h3>
 
-          <!-- Deskripsi -->
-          <div id="descBox-1" class="hidden mt-2 text-sm text-gray-600">
-            Jamu tradisional berbahan dasar kunyit dan asam jawa untuk menyegarkan tubuh dan membantu melancarkan haid.
-          </div>
-
-          <h3><strong>Kategori:</strong> Jamu Anak</h3>
-          <p><strong>Harga:</strong> Rp. 15.000,00</p>
-
-          <button onclick="toggleCheckout()" class="buy-btn">Checkout</button>
-
-          <button class="buy-btn" data-product-id="1" data-product-name="Jamu Kunyit Asam" data-price="15000">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button>
-        </div>
+      <div id="descBox-1" class="descBox hidden">
+        <p>Jamu tradisional berbahan dasar kunyit dan asam jawa untuk menyegarkan tubuh dan membantu melancarkan haid.</p>
       </div>
+
+      <p><strong>Kategori:</strong> Jamu Anak</p>
+      <p><strong>Harga:</strong> Rp. 15.000,00</p>
+
+      <div class="button-row">
+        <button onclick="toggleCheckout()" class="buy-btn">Checkout</button>
+        </button>
+      </div>
+    </div>
+
+    <!-- Produk 2 -->
+    <div class="product-card" data-category="jamuHerbal">
+      <img src="../../assets/images/jamu-bersalin.png" alt="Jamu Bersalin">
+
+      <h3 onclick="toggleDesc(2)">
+        Jamu Bersalin
+        <span id="arrowIcon-2" class="arrow-icon">▼</span>
+      </h3>
+
+      <div id="descBox-2" class="descBox hidden">
+        Jamu tradisional berbahan dasar kunyit dan asam jawa untuk menyegarkan tubuh dan membantu melancarkan haid.
+      </div>
+
+      <p><strong>Kategori:</strong> Jamu Herbal</p>
+      <p><strong>Harga:</strong> Rp. 15.000,00</p>
+
+      <div class="button-row">
+        <button onclick="toggleCheckout()" class="buy-btn">Checkout</button>
+        </button>
+      </div>
+    </div>
+
+        <!-- Produk 3 -->
+    <div class="product-card" data-category="jamuHerbal">
+      <img src="../../assets/images/jamu-klingsir.png" alt="Jamu Klingsir">
+
+      <h3 onclick="toggleDesc(3)">
+        Jamu Bersalin
+        <span id="arrowIcon-3" class="arrow-icon">▼</span>
+      </h3>
+
+      <div id="descBox-3" class="descBox hidden">
+        Jamu tradisional berbahan dasar kunyit dan asam jawa untuk menyegarkan tubuh dan membantu melancarkan haid.
+      </div>
+
+      <p><strong>Kategori:</strong> Jamu Herbal</p>
+      <p><strong>Harga:</strong> Rp. 15.000,00</p>
+
+      <div class="button-row">
+        <button onclick="toggleCheckout()" class="buy-btn">Checkout</button>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
         <!-- <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             <?php foreach ($products as $product) { ?>
@@ -110,7 +149,7 @@ $conn->close();
     </div>
 </div> -->
 
-<script>
+<!-- <script>
     function toggleDesc(id) {
         const descBox = document.getElementById('descBox-' + id);
         const arrowIcon = document.getElementById('arrowIcon-' + id);
@@ -128,4 +167,5 @@ $conn->close();
         const modal = document.getElementById('checkoutModal');
         modal.classList.toggle('hidden');
     }
-</script>
+</script> -->
+
