@@ -21,73 +21,56 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 
+<div class="container">
+  <div class="product-list">
 
-<div class="">
-  <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-    <h2 class="sr-only">Products</h2>
+    <!-- Produk 1 -->
+    <div class="product-card" data-category="jamuAnak">
+      <img src="../../assets/images/buyungupik.jpg" alt="Buyung Upik">
 
-    <!-- Kontainer produk flex biar sejajar -->
-    <div class="flex flex-wrap gap-6 justify-center">
+      <h3 onclick="toggleDesc(1)">
+        Buyung Upik
+        <span id="arrowIcon-1" class="arrow-icon">▼</span>
+      </h3>
 
-      <!-- Produk 1 -->
-      <div class="max-w-sm product-card bg-white p-4 rounded-lg shadow" data-category="jamuAnak">
-        <div class="group block">
-          <img src="../../assets/images/buyungupik.jpg" 
-               alt="Buyung Upik" 
-               class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8">
-
-          <div class="flex items-center justify-between mt-4 cursor-pointer" onclick="toggleDesc(1)">
-            <h3 class="text-sm text-gray-700 font-semibold flex items-center">
-              Buyung Upik
-              <span id="arrowIcon-1" class="ml-2 transition-transform">▼</span>
-            </h3>
-          </div>
-
-          <div id="descBox-1" class="hidden mt-2 text-sm text-gray-600">
-            Jamu tradisional berbahan dasar kunyit dan asam jawa untuk menyegarkan tubuh dan membantu melancarkan haid.
-          </div>
-
-          <h3><strong>Kategori:</strong> Jamu Anak</h3>
-          <p><strong>Harga:</strong> Rp. 15.000,00</p>
-
-          <button onclick="toggleCheckout()" class="buy-btn mt-2">Checkout</button>
-          <button class="buy-btn mt-2" data-product-id="1" data-product-name="Buyung Upik" data-price="15000">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button>
-        </div>
+      <div id="descBox-1" class="description hidden">
+        Jamu tradisional berbahan dasar kunyit dan asam jawa untuk menyegarkan tubuh dan membantu melancarkan haid.
       </div>
 
-      <!-- Produk 2 -->
-      <div class="max-w-sm product-card bg-white p-4 rounded-lg shadow" data-category="jamuHerbal">
-        <div class="group block">
-          <img src="../../assets/images/jamu-bersalin.png" 
-               alt="Jamu Bersalin" 
-               class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8">
+      <p><strong>Kategori:</strong> Jamu Anak</p>
+      <p><strong>Harga:</strong> Rp. 15.000,00</p>
 
-          <div class="flex items-center justify-between mt-4 cursor-pointer" onclick="toggleDesc(2)">
-            <h3 class="text-sm text-gray-700 font-semibold flex items-center">
-              Jamu Bersalin
-              <span id="arrowIcon-2" class="ml-2 transition-transform">▼</span>
-            </h3>
-          </div>
+      <div class="button-row">
+        <button onclick="toggleCheckout()" class="buy-btn">Checkout</button>
+        </button>
+      </div>
+    </div>
 
-          <div id="descBox-2" class="hidden mt-2 text-sm text-gray-600">
-            Jamu tradisional berbahan dasar kunyit dan asam jawa untuk menyegarkan tubuh dan membantu melancarkan haid.
-          </div>
+    <!-- Produk 2 -->
+    <div class="product-card" data-category="jamuHerbal">
+      <img src="../../assets/images/jamu-bersalin.png" alt="Jamu Bersalin">
 
-          <h3><strong>Kategori:</strong> Jamu Herbal</h3>
-          <p><strong>Harga:</strong> Rp. 15.000,00</p>
+      <h3 onclick="toggleDesc(2)">
+        Jamu Bersalin
+        <span id="arrowIcon-2" class="arrow-icon">▼</span>
+      </h3>
 
-          <button onclick="toggleCheckout()" class="buy-btn mt-2">Checkout</button>
-          <button class="buy-btn mt-2" data-product-id="2" data-product-name="Jamu Bersalin" data-price="15000">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button>
-        </div>
+      <div id="descBox-2" class="description hidden">
+        Jamu tradisional berbahan dasar kunyit dan asam jawa untuk menyegarkan tubuh dan membantu melancarkan haid.
       </div>
 
-    </div> <!-- end flex wrapper -->
+      <p><strong>Kategori:</strong> Jamu Herbal</p>
+      <p><strong>Harga:</strong> Rp. 15.000,00</p>
+
+      <div class="button-row">
+        <button onclick="toggleCheckout()" class="buy-btn">Checkout</button>
+        </button>
+      </div>
+    </div>
+
   </div>
 </div>
+
 
         <!-- <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             <?php foreach ($products as $product) { ?>
@@ -145,21 +128,17 @@ $conn->close();
 </div> -->
 
 <script>
-    function toggleDesc(id) {
-        const descBox = document.getElementById('descBox-' + id);
-        const arrowIcon = document.getElementById('arrowIcon-' + id);
+function toggleDesc(id) {
+    const descBox = document.getElementById('descBox-' + id);
+    const arrowIcon = document.getElementById('arrowIcon-' + id);
 
-        if (descBox.classList.contains('hidden')) {
-            descBox.classList.remove('hidden');
-            arrowIcon.innerHTML = '▲';
-        } else {
-            descBox.classList.add('hidden');
-            arrowIcon.innerHTML = '▼';
-        }
+    if (descBox.style.display === 'none' || !descBox.style.display) {
+        descBox.style.display = 'block';
+        arrowIcon.innerHTML = '▲';
+    } else {
+        descBox.style.display = 'none';
+        arrowIcon.innerHTML = '▼';
     }
-
-    function toggleCheckout() {
-        const modal = document.getElementById('checkoutModal');
-        modal.classList.toggle('hidden');
-    }
+}
 </script>
+
