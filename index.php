@@ -11,9 +11,9 @@
 </head>
 <body>
 
-<div class="navbar">
+
     <?php include('views/partial/navbar.php');?>
-</div>
+
 
 <div class="posterSlider">
     <?php include('views/partial/posterSlider.php');?>
@@ -30,6 +30,7 @@
 <div class="footer">
     <?php include('views/partial/footer.php'); ?>
 </div>
+
 
 <script src="assets/js/category.js"></script>
 <script src="assets/js/posterSlider.js"></script>
