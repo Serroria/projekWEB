@@ -46,8 +46,14 @@ $base_url = dirname($_SERVER['SCRIPT_NAME']);
         <p><strong>Kategori:</strong> <?= htmlspecialchars($product['kategori']) ?></p>
         <p><strong>Harga:</strong> Rp. <?= number_format($product['harga'], 0, ',', '.') ?></p>
 
+          
         <div class="button-row">
-          <button onclick="toggleCheckout()" class="buy-btn">Checkout</button>
+           <form action="<?= $base_url ?>/controllers/add%20to%20cart/addOrderan.php" method="POST">
+                                    <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
+                                    <input type="hidden" name="quantity" value="1">
+                                    <button type="submit" name="add_to_cart" onclick="toggleCheckout()" class="buy-btn">Cehckout</button>
+                                </form>
+        
         </div>
       </div>
     <?php endforeach; ?>
