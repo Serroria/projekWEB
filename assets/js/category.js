@@ -1,4 +1,3 @@
-// Filter dan Pencarian
 function filterProduct(category) {
     const searchTerm = document.getElementById('search-input').value.trim().toLowerCase();
     applyFilters(searchTerm, category);
@@ -19,15 +18,10 @@ function applyFilters(searchTerm, category) {
     });
 }
 
-  
-  
-
-// Inisialisasi
 document.addEventListener('DOMContentLoaded', () => {
-    // Filter awal
+
     filterProduct('all');
     
-    // Event Listener untuk tombol filter
     document.querySelectorAll('[data-filter]').forEach(button => {
         button.addEventListener('click', () => {
             document.querySelectorAll('[data-filter]').forEach(btn => btn.classList.remove('active'));
@@ -36,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Event Listener untuk search
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
     
