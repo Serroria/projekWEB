@@ -29,7 +29,7 @@ $conn = $db->getConnection();
                 <span class="bar"></span>
             </button>
             <ul class="navbar-menu">
-                <li><a href="#" >Beranda</a></li>
+              
                 <li><a href="../login/logout.php" class="text-sm text-gray-800 hover:underline">Logout</a></li>
             </ul>
         </div>
