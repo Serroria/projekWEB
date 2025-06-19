@@ -20,7 +20,6 @@ body {
   text-align: center;
 }
 
-/* Search bar + tombol */
 #search-container {
   display: flex;
   align-items: center;
@@ -31,7 +30,6 @@ body {
   margin: 20px auto;
 }
 
-/* Input search */
 #search-input {
   flex: 1;
   padding: 12px 20px;
@@ -47,7 +45,6 @@ body {
   outline: none;
 }
 
-/* Tombol Cari */
 #search-container button {
   padding: 12px 25px;
   background-color: #902727;
@@ -63,7 +60,6 @@ body {
   background-color: #7a1f1f;
 }
 
-/* Filter kategori */
 #buttons {
   display: flex;
   flex-wrap: wrap;
@@ -90,7 +86,6 @@ body {
   color: #fff;
 }
 
-/* Responsif */
 @media (max-width: 620px) {
   #search-container {
     flex-direction: column;

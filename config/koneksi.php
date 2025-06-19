@@ -1,5 +1,4 @@
 <?php
-if (!class_exists('koneksi')) {
     class koneksi {
         private  $host = 'localhost';
         private $db = 'db_jamukita';
@@ -20,5 +19,4 @@ if (!class_exists('koneksi')) {
             return $this->conn;
         }
     }
-}
 ?>
