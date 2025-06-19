@@ -1,7 +1,7 @@
 <?php
 class koneksi {
     private  $host = 'localhost';
-    private $db = 'db_jamuKita';
+    private $db = 'db.jamukita';
     private $user = 'root';
     private $pass = '';
     public $conn;
