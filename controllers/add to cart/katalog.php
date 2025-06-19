@@ -23,7 +23,7 @@ $result = $conn->query($query);
         <a href="../add to cart/cart_page.php" class="btn btn-success mb-4">Lihat Keranjang</a>
         
         <!-- Daftar Produk -->
-        <div class="row">
+        <!-- <div class="row">
             <?php if ($result->num_rows > 0): ?>
                 <?php while ($product = $result->fetch_assoc()): ?>
                     <div class="col-md-4 mb-4">
