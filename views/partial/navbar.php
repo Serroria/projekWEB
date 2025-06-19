@@ -40,9 +40,9 @@ $base_url = dirname($_SERVER['SCRIPT_NAME']);
                 <li><a href="{{ route('cart.view') }}" class="text-sm text-gray-800 hover:underline">🛒 Keranjang</a></li>
              <?php if (isset($_SESSION['login']) && $_SESSION['login'] === true): ?>
                 <li><span class="text-sm text-gray-800">👋 Halo, <?= $_SESSION['nama']; ?></span></li>
-                <li><a href="../login/logout.php" class="text-sm text-red-600 hover:underline">Logout</a></li>
+                <li><a href="<?= $base_url ?>/views/login/logout.php" class="text-sm text-red-600 hover:underline">Logout</a></li>
             <?php else: ?>
-                <li><a href="../login/login.php" class="text-sm text-blue-600 hover:underline">Login</a></li>
+                <li><a href="<?= $base_url ?>/views/login/login.php" class="text-sm text-blue-600 hover:underline">Login</a></li>
             <?php endif; ?>
             </ul>
         </div>

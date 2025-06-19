@@ -34,6 +34,7 @@
 <script src="assets/js/category.js"></script>
 <script src="assets/js/posterSlider.js"></script>
 <script src="assets/js/produk.js"></script>
+<script src="assets/js/navbarHome.js"></script>
 
 </body>
 </html>
