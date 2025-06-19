@@ -30,7 +30,7 @@ $conn = $db->getConnection();
             </button>
             <ul class="navbar-menu">
               
-                <li><a href="../login/logout.php" class="text-sm text-gray-800 hover:underline">Logout</a></li>
+                <li><a href="../../views/login/logout.php" class="text-sm text-gray-800 hover:underline">Logout</a></li>
             </ul>
         </div>
 </nav>
@@ -126,5 +126,6 @@ $conn = $db->getConnection();
             checkboxes.forEach(checkbox => checkbox.checked = e.target.checked);
         });
     </script>
+    <script src="../../assets/js/adminSidebar.js"></script>
 </body>
 </html>
