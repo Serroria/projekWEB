@@ -31,7 +31,8 @@ $base_url = dirname($_SERVER['SCRIPT_NAME']);
                 <span class="bar"></span>
             </button>
             <ul class="navbar-menu">
-                <li><span style="color: #fff">👋 Halo, <?= $_SESSION['nama']; ?></span></li>
+                <li><span style="color: #fff">          👋 Halo, <?= $_SESSION['nama'] ?? 'Pengunjung'; ?>
+</span></li>
                 <li><a href="#" >Beranda</a></li>
                 <li><a href="#" class="menu-item">Tentang Kami</a></li>
                 <li><a href="#" class="menu-item">Cara Order</a></li>
