@@ -2,6 +2,10 @@
 session_start();
 ?>
 
+<?php
+$base_url = dirname($_SERVER['SCRIPT_NAME']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +25,7 @@ session_start();
         <div class="navbar-container">
             <!--logo-->
             <a href="#" class="navbar-logo">
-                <img src="../../assets/images/iconLogo.png" alt="logoJamuKita">
+                <img src="<?= $base_url ?>/assets/images/iconLogo.png" alt="logoJamuKita">
             </a>
             <button class="navbar-toggle">  
                 <span class="bar"></span>

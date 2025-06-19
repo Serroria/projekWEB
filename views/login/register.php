@@ -28,7 +28,7 @@ if(isset($_POST ['signup'])) {
     $_SESSION['login'] = true;
     $_SESSION['nama'] = $row['firstName'];
         if($conn->query($insertQuery)==TRUE){
-            header("Location: ../layouts/main.php");
+            header("Location: ../../index.php");
         } else{
             echo "Error:".$conn->error;
         }
@@ -56,7 +56,7 @@ if(isset($_POST['signin'])){
         // header("Location: ../../controllers/crud admin/admin_dashboard.php");
           header('Location: ../admin/admin.php');
     }else {
-         header("Location: ../layouts/main.php");
+        header("Location: ../../index.php");
     }
     exit();
    } else{
