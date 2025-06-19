@@ -193,10 +193,6 @@ $conn->close();
 </div> -->
 
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-require_once '../../config/koneksi.php';
 $db = new koneksi();
 $conn = $db->getConnection();
 

@@ -1,13 +1,13 @@
-<?php
+<!-- <?php
 include '../../config/koneksi.php';
 $db = new koneksi();
 $conn = $db->getConnection();
 
 $query = "SELECT * FROM products";
 $result = $conn->query($query);
-?>
+?> -->
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -52,4 +52,4 @@ $result = $conn->query($query);
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+</html> -->
