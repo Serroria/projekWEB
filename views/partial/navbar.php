@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 $base_url = dirname($_SERVER['SCRIPT_NAME']);
@@ -7,49 +6,59 @@ $base_url = dirname($_SERVER['SCRIPT_NAME']);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar</title>
-    <link rel='stylesheet' href='../../assets/css/navbarHome.css'>
-    <link rel='stylesheet' href='../../assets/css/posterSlide.css'>
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navbar</title>
+  <link rel="stylesheet" href="../../assets/css/navbarHome.css" />
+  <link rel="stylesheet" href="../../assets/css/posterSlide.css" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 
 <nav class="navbar">
-        <div class="navbar-container">
-            <!--logo-->
-            <a href="#" class="navbar-logo">
-                <img src="<?= $base_url ?>/assets/images/iconLogo.png" alt="logoJamuKita">
-            </a>
-            <button class="navbar-toggle">  
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            <ul class="navbar-menu">
-                <li><span style="color: #fff">👋 Halo, <?= $_SESSION['nama']; ?></span></li>
-                <li><a href="#" >Beranda</a></li>
-                <li><a href="#" class="menu-item">Tentang Kami</a></li>
-                <li><a href="#" class="menu-item">Cara Order</a></li>
-                <li><a href="#" class="menu-item">Kontak Kami</a></li>
-                <li><a href="<?= $base_url ?>/controllers/add%20to%20cart/cart_page.php" class="text-sm text-gray-800 hover:underline">🛒 Keranjang</a></li>
-             <?php if (isset($_SESSION['login']) && $_SESSION['login'] === true): ?>
-                
-                <li><a href="<?= $base_url ?>/views/login/logout.php" class="text-sm text-red-600 hover:underline">Logout</a></li>
-            <?php else: ?>
-                <li><a href="<?= $base_url ?>/views/login/login.php" class="text-sm text-blue-600 hover:underline">Login</a></li>
-            <?php endif; ?>
-            </ul>
-        </div>
+  <div class="navbar-container">
+    <!-- Logo -->
+    <a href="#" class="navbar-logo">
+      <img src="<?= $base_url ?>/assets/images/iconLogo.png" alt="logoJamuKita" />
+    </a>
+
+    <button class="navbar-toggle">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <ul class="navbar-menu">
+      <li>
+        <span style="color: #fff">
+          👋 Halo, <?= $_SESSION['nama'] ?? 'Pengunjung'; ?>
+        </span>
+      </li>
+      <li><a href="#">Beranda</a></li>
+      <li><a href="#" class="menu-item">Tentang Kami</a></li>
+      <li><a href="#" class="menu-item">Cara Order</a></li>
+      <li><a href="#" class="menu-item">Kontak Kami</a></li>
+      <li>
+        <a href="<?= $base_url ?>/controllers/add%20to%20cart/cart_page.php" class="text-sm text-gray-800 hover:underline">
+          🛒 Keranjang
+        </a>
+      </li>
+
+      <?php if (isset($_SESSION['login']) && $_SESSION['login'] === true): ?>
+        <li>
+          <a href="<?= $base_url ?>/views/login/logout.php" class="text-sm text-red-600 hover:underline">Logout</a>
+        </li>
+      <?php else: ?>
+        <li>
+          <a href="<?= $base_url ?>/views/login/login.php" class="text-sm text-blue-600 hover:underline">Login</a>
+        </li>
+      <?php endif; ?>
+    </ul>
+  </div>
 </nav>
 
-    
-
- <!-- Modal Pop-up -->
+<!-- Modal -->
 <div class="modal" style="display: none;">
   <div class="modal-content">
     <span class="close-modal">&times;</span>
@@ -58,10 +67,10 @@ $base_url = dirname($_SERVER['SCRIPT_NAME']);
   </div>
 </div>
 
-
 <script src='../../assets/js/navbarHome.js'></script>
 <script src='../../assets/js/posterSlide.js'></script>
 <script src='../../assets/js/navbarContent.js'></script>
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
     const menuItems = document.querySelectorAll(".menu-item");
@@ -85,8 +94,8 @@ $base_url = dirname($_SERVER['SCRIPT_NAME']);
 
             // ... seluruh if-else kamu tetap di sini, tidak perlu diubah
             if (text === "Tentang Kami") {
-                titleContent = `<h2>Tentang Jamu Kita</h2>`;
-                bodyContent = `
+                titleContent = <h2>Tentang Jamu Kita</h2>;
+                bodyContent = 
                     <p class="modal-description">
                         Jamu Kita adalah platform digital yang menghubungkan tradisi jamu Indonesia dengan teknologi modern. 
                         Kami berkomitmen untuk melestarikan warisan nenek moyang sambil memberdayakan UMKM lokal.
@@ -113,10 +122,10 @@ $base_url = dirname($_SERVER['SCRIPT_NAME']);
                             <div class="feature-text">Resep tradisional dengan sentuhan modern</div>
                         </div>
                     </div>
-                `;
+                ;
             } else if (text === "Cara Order") {
-                titleContent = `<h2>Cara Memesan</h2>`;
-                bodyContent = `
+                titleContent = <h2>Cara Memesan</h2>;
+                bodyContent = 
                     <p class="modal-description">
                         Proses pemesanan yang mudah dan aman untuk mendapatkan jamu berkualitas langsung ke rumah Anda.
                     </p>
@@ -142,10 +151,10 @@ $base_url = dirname($_SERVER['SCRIPT_NAME']);
                             <div class="step-description">Produk jamu segar siap dinikmati! Paket dikemas aman dan higienis</div>
                         </div>
                     </div>
-                `;
+                ;
             } else if (text === "Kontak Kami") {
-                titleContent = `<h2>Hubungi Kami</h2>`;
-                bodyContent = `
+                titleContent = <h2>Hubungi Kami</h2>;
+                bodyContent = 
                     <p class="modal-description">
                         Tim customer service kami siap membantu Anda 24/7. Jangan ragu untuk menghubungi kami!
                     </p>
@@ -179,10 +188,10 @@ $base_url = dirname($_SERVER['SCRIPT_NAME']);
                             </div>
                         </div>
                     </div>
-                `;
+                ;
             } else if (text === "Beranda") {
-                titleContent = `<h2>Selamat Datang di Jamu Kita</h2>`;
-                bodyContent = `
+                titleContent = <h2>Selamat Datang di Jamu Kita</h2>;
+                bodyContent = 
                     <p class="modal-description">
                         Platform digital terpercaya untuk jamu tradisional Indonesia. 
                         Nikmati khasiat jamu warisan nenek moyang dengan kemudahan berbelanja online.
@@ -199,7 +208,7 @@ $base_url = dirname($_SERVER['SCRIPT_NAME']);
                             <div class="feature-text">Dikirim fresh langsung ke rumah</div>
                         </div>
                     </div>
-                `;
+                ;
             }
 
             modalTitle.innerHTML = titleContent;
@@ -239,42 +248,6 @@ $base_url = dirname($_SERVER['SCRIPT_NAME']);
 });
 
 </script>
-<!-- <script>document.addEventListener("DOMContentLoaded", function () {
-    const menuItems = document.querySelectorAll(".menu-item");
-    const modal = document.querySelector(".modal");
-    const modalContent = document.querySelector(".modal-content");
 
-    menuItems.forEach((item) => {
-        item.addEventListener("click", function (e) {
-            e.preventDefault(); // Mencegah reload halaman
-
-            const text = this.textContent.trim();
-
-            let content = "";
-            if (text === "Tentang Kami") {
-                content = "<h2>Tentang Kami</h2><p>Ini adalah informasi tentang kami.</p>";
-            } else if (text === "Cara Order") {
-                content = "<h2>Cara Order</h2><p>Petunjuk cara memesan produk kami.</p>";
-            } else if (text === "Kontak Kami") {
-                content = "<h2>Kontak Kami</h2><p>Hubungi kami di nomor berikut: 08123456789.</p>";
-            }
-
-            modalContent.innerHTML = `<span class="close-modal">&times;</span>` + content;
-            modal.style.display = "flex";
-
-            // Tutup modal saat X diklik
-            modalContent.querySelector(".close-modal").addEventListener("click", function () {
-                modal.style.display = "none";
-            });
-        });
-    });
-
-    window.addEventListener("click", function (e) {
-        if (e.target === modal) {
-            modal.style.display = "none";
-        }
-    });
-});
-</script> -->
 </body>
 </html>
