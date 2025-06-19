@@ -4,13 +4,14 @@
 <table class="table-produk">
     <thead>
     <tr>
-        <th>#</th>
-        <th>Gambar</th>
-        <th>Nama</th>
-        <th>Deskripsi</th>
-        <th>Kategori</th>
-        <th>Harga</th>
-        <th>Aksi</th>
+       <th><input type="checkbox" id="select_all"></th>
+                        <th>ID</th>
+                        <th>Nama</th>
+                        <th>Kategori</th>
+                        <th>Harga</th>
+                        <th>Deskripsi</th>
+                        <th>Gambar</th> 
+        
     </tr>
     </thead>
     <tbody>

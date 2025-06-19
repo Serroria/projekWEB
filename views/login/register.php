@@ -41,6 +41,9 @@ if(isset($_POST['signin'])){
    $result=$conn->query($sql);
    if($result->num_rows>0){
     session_start();
+
+    $_SESSION['login'] = true;
+            $_SESSION['nama'] = $row['firstName']; 
     $row=$result->fetch_assoc();
     $_SESSION['email']=$row['email'];
     $_SESSION['role'] = $row['role'];
