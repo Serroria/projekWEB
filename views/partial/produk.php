@@ -26,6 +26,7 @@ $base_url = dirname($_SERVER['SCRIPT_NAME']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katalog Produk</title>
+    <link rel="stylesheet" href="<?= $base_url ?>/assets/css/produk.css">
 </head>
 <body>
 <div class="container">
@@ -51,7 +52,7 @@ $base_url = dirname($_SERVER['SCRIPT_NAME']);
            <form action="<?= $base_url ?>/controllers/add%20to%20cart/addOrderan.php" method="POST">
                                     <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
                                     <input type="hidden" name="quantity" value="1">
-                                    <button type="submit" name="add_to_cart" onclick="toggleCheckout()" class="buy-btn">Cehckout</button>
+                                    <button type="submit" name="add_to_cart" onclick="toggleCheckout()" class="buy-btn">Checkout</button>
                                 </form>
         
         </div>
