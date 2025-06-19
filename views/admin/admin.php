@@ -15,43 +15,24 @@ $conn = $db->getConnection();?>
     </head>
     <body>
 
-    <!--sidebar-->
-     <div class="sidebar">
-        <div class="logo-details">
-            <div class="logo_name">JamuKita Admin</div>
-            <i class='bx bx-menu' id="btn"></i>
+    <!--navbar-->
+<nav class="navbar">
+        <div class="navbar-container">
+            <!--logo-->
+            <a href="#" class="navbar-logo">
+                <img src="../../assets/images/iconLogo.png" alt="logoJamuKita">
+            </a>
+            <button class="navbar-toggle">  
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="navbar-menu">
+                <li><a href="#" >Beranda</a></li>
+                <li><a href="../login/logout.php" class="text-sm text-gray-800 hover:underline">Logout</a></li>
+            </ul>
         </div>
-        <ul class="nav-list">
-            
-            <li>
-                <a href="#" onclick="showContent('products')">
-                    <i class='bx bx-chat'></i>
-                    <span class="links_name">Produk</span>
-                </a>
-                <span class="tooltip">Product</span>
-            </li>
-               <!-- <li>
-                <a href="#" onclick="showContent('orders')">
-                    <i class='bx bx-cart-alt'></i>
-                    <span class="links_name">Order</span>
-                </a>
-                <span class="tooltip">Order</span>
-            </li> -->
-            
-            <li class="profile">
-                <div class="profile-details">
-                    <!-- <img src="iconLogo.png" alt="profileImg"> -->
-                    <div class="name_job">
-                        <div class="name">JamuKita</div>
-                        <div class="job">Web Developer</div>
-                    </div>
-                </div>
-               
-                <a  href="../login/logout.php" onclick="return confirm('Yakin mau logout?')"> <i class='bx bx-log-out' id="log_out" ></i></a>
-
-            </li>
-        </ul>
-    </div>
+</nav>
         <div class="content">
        
         <!-- Form Tambah Produk -->
