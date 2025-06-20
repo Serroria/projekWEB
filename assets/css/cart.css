@@ -1,0 +1,67 @@
+/* Menggunakan Flexbox pada body agar footer selalu di bawah */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+/* Styling untuk header */
+.header {
+    background-color: #800000; /* Merah sesuai gambar */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Styling untuk tabel */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    text-align: center;
+    padding: 10px;
+}
+
+table th {
+    background-color: #8B0000; /* Warna merah untuk header tabel */
+    color: white;
+}
+
+table td {
+    background-color: #F8F8F8;
+}
+
+.table-bordered {
+    border: 1px solid #ddd;
+}
+
+/* Styling untuk tombol checkout */
+.btn-success {
+    background-color: #4CAF50; /* Warna hijau sesuai gambar */
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.btn-danger {
+    background-color: #f44336; /* Warna merah untuk tombol hapus */
+    color: white;
+    border-radius: 5px;
+}
+
+/* Styling untuk footer */
+footer {
+    background-color: #f1f1f1;
+    padding: 10px 0;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+}
