@@ -54,7 +54,6 @@ $base_url = dirname($_SERVER['SCRIPT_NAME']);
                                     <input type="hidden" name="quantity" value="1">
                                     <button type="submit" name="add_to_cart" class="buy-btn">Checkout</button>
                                 </form>
-        
         </div>
       </div>
     <?php endforeach; ?>
