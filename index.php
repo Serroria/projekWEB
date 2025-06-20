@@ -19,12 +19,12 @@
     <?php include('views/partial/posterSlider.php');?>
 </div>
 
-<div class="posterSlider">
-    <?php include('views/partial/category.php');?>
-</div>
+
 
 <div class="homepage">
+    <?php include('views/partial/category.php');?>
     <?php include('views/partial/produk.php'); ?>
+    
 
 </div>
 <div class="footer">

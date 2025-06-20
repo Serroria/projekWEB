@@ -20,15 +20,6 @@ $conn->close();
 $base_url = dirname($_SERVER['SCRIPT_NAME']);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katalog Produk</title>
-    <link rel="stylesheet" href="<?= $base_url ?>/assets/css/produk.css">
-</head>
-<body>
 <div class="container">
   <div class="product-list">
     <?php foreach ($products as $product): ?>
@@ -59,6 +50,3 @@ $base_url = dirname($_SERVER['SCRIPT_NAME']);
     <?php endforeach; ?>
   </div>
 </div>
-
-</body>
-</html>
