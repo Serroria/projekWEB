@@ -12,8 +12,3 @@ window.toggleDesc = function(id) {
     arrowIcon.innerHTML = '▲';
   }
 }
-
-function toggleCheckout() {
-  const modal = document.getElementById('checkoutModal');
-  modal.classList.toggle('show');
-}
