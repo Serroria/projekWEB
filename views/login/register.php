@@ -30,10 +30,10 @@ if(isset($_POST ['signup'])) {
             $userResult = $conn->query($getUser);
             $row = $userResult->fetch_assoc();
         
-            session_start();
-        $_SESSION['login'] = true;
-        $_SESSION['nama'] = $row['firstName'];
-         $_SESSION['email'] = $row['email'];
+            session_start(); //memulasi session php
+            $_SESSION['login'] = true;
+            $_SESSION['nama'] = $row['firstName'];
+            $_SESSION['email'] = $row['email'];
             $_SESSION['role'] = $row['role'];
 
             header("Location: ../../index.php");

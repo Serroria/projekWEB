@@ -1,8 +1,8 @@
 <?php
-session_start();          // Mulai session
-session_unset();          // Hapus semua session yang ada
-session_destroy();        // Hancurkan session
+session_start();          // mulai session
+session_unset();          // hapus semua session yang ada
+session_destroy();        // hancurkan session
 
-header("Location: login.php");  // Arahkan ke halaman login
+header("Location: login.php");  // ke halaman login
 exit();
 ?>
