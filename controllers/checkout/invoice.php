@@ -70,7 +70,7 @@ $item_result = $items->get_result();
         </tbody>
     </table>
 
-    <a href="katalog.php" class="btn btn-primary">Kembali ke Katalog</a>
+    <a href="../../index.php" class="btn btn-primary">Kembali ke Katalog</a>
     <a href="invoice_pdf.php?transaction_id=<?= $transaction['id']; ?>" class="btn btn-danger" target="_blank">
         Download Invoice (PDF)
     </a>
